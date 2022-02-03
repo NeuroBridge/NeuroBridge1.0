@@ -27,16 +27,16 @@ const useStyles = makeStyles(theme => ({
         },
         backgroundColor: 'rgba(63, 73, 83, 0.7)',
         height: '100%',
-        color: theme.palette.primary.contrastText, //white
+        color: '#fff', //white
         textAlign: 'center',
         overflow: 'hidden',
         padding: '140px 160px',
     },
     button: {
         borderWidth: '1px',
-        borderColor: theme.palette.secondary.main, //red
-        backgroundColor: theme.palette.secondary.main, //red
-        color: theme.palette.primary.contrastText, //white
+        borderColor: '#DC143C', //red
+        backgroundColor: '#DC143C', //red
+        color: '#fff', //white
         borderRadius: '5px',
         padding: '10px 30px',
         boxShadow: '0px 2px 15px rgba(85, 98, 112, 0.08)',

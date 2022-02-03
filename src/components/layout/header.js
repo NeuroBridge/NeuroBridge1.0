@@ -105,7 +105,7 @@ const useStyles = makeStyles(theme => ({
   mobileMenuItem: {
     fontSize: '1.2rem',
     padding: '1rem',
-    color: theme.palette.text.primary,
+    color: '#556270',
     backgroundColor: 'transparent',
     textDecoration: 'none',
     transition: 'background-color 250ms',
@@ -118,7 +118,7 @@ const useStyles = makeStyles(theme => ({
   mobileMenuSubItem: {
     fontSize: '1rem',
     padding: '1rem',
-    color: theme.palette.text.primary,
+    color: '#556270',
     backgroundColor: 'transparent',
     textDecoration: 'none',
     transition: 'background-color 250ms',

@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 
     },
     finalCrumb: {
-      color: theme.palette.text.primary,
+      color: '#556270',
     },
     crumbTitle: {
       fontSize: ['28px', '!important']

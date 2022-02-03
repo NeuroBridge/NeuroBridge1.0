@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     '& a': {
       textDecoration: 'none',
-      color: theme.palette.text.secondary,
+      color: '#DC143C',
     },
     '& h3': {
       fontWeight: '500',

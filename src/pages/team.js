@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
         padding: '0px 10px',
     },
     teamName: {
-        color: theme.palette.text.secondary,
+        color: '#DC143C',
         paddingBottom: '10px',
         fontWeight: '600',
         fontSize: ['1.2rem', '!important'],
