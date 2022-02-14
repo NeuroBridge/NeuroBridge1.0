@@ -1,12 +1,12 @@
 import * as React from "react"
-import { makeStyles }  from '@mui/styles'
+import { makeStyles }  from '@material-ui/core/styles'
 import featureImg1 from '../images/features-2.png'
 import featureImg2 from '../images/features-3.png'
 import featureImg3 from '../images/features-4.png'
 import featureImg1b from '../images/slide/NeurobridgeScreen.png'
 import featureImg2b from '../images/slide/Neurobridge_database.png'
 import featureImg3b from '../images/slide/Neurobridge_Mining.png'
-import {Card, CardHeader, CardMedia, CardContent} from '@mui/material'
+import {Card, CardHeader, CardMedia, CardContent} from '@material-ui/core/'
 
 const content = [
     {

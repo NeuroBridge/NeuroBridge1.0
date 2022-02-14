@@ -1,8 +1,8 @@
 import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from '../components/layout/seo'
-import { makeStyles } from '@mui/styles'
-import { Container, Card, CardMedia, CardContent, Typography, Grid } from '@mui/material'
+import { makeStyles } from '@material-ui/core/styles'
+import { Container, Card, CardMedia, CardContent, Typography, Grid } from '@material-ui/core/'
 import { useGenericAvatar, useTeam } from '../hooks'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
 
