@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from 'gatsby'
-import { makeStyles }  from '@mui/styles'
-import { Typography }  from '@mui/material'
-import { Breadcrumbs } from '@mui/material'
+import { makeStyles }  from '@material-ui/core/styles'
+import { Typography }  from '@material-ui/core/'
+import { Breadcrumbs } from '@material-ui/core/'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
       fontWeight: '400',
     },
     pathLink: {
-      color: ['#D9232D', '!important'],
+      color: ['#D9232D'],
       textDecoration: ['none', '!important'],
 
     },

@@ -1,15 +1,18 @@
 import * as React from "react"
 import { Link } from 'gatsby'
-import { makeStyles }  from '@mui/styles'
-import { Slide, Typography, ButtonUnstyled } from '@mui/material'
+import { makeStyles }  from '@material-ui/core/styles'
+import { Slide, Typography } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import welcomeNB from '../images/slide/PdG.jpeg'
 
 const useStyles = makeStyles(theme => ({
     hero: {
         height: '600px', //make the hero image full screen, must adapt
+        backgroundImage: `url(${welcomeNB})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center 33%',
+        
     },
     caption: {
         '& h1': {        
@@ -41,8 +44,15 @@ const useStyles = makeStyles(theme => ({
         padding: '10px 30px',
         boxShadow: '0px 2px 15px rgba(85, 98, 112, 0.08)',
         margin: '10px',
-        '&:hover':{
+        textTransform: 'capitalize',
+        '&:hover': {
             cursor: 'pointer',
+            borderWidth: '1px',
+            borderColor: '#f54568', //red
+            backgroundColor: '#f54568', //red
+            color: '#fff', //white
+            textTransform: 'capitalize',
+
         }
     }
 }))
@@ -51,7 +61,7 @@ const HomeHero = () => {
 const classes = useStyles()
 
     return (
-        <div className={classes.hero} style={{ backgroundImage: `url(${ welcomeNB })` }}>
+        <div className={classes.hero}>
             <div className={classes.caption}>
                 <Slide direction='down' in='true' mountOnEnter unmountOnExit timeout={800}>                
                     <Typography variant='h1'>Welcome to NeuroBridge</Typography>
@@ -60,8 +70,8 @@ const classes = useStyles()
                     <Typography paragraph>A platform for data discovery to enhance the reuse of clinical neuroscience/neuroimaging data. We develop the NeuroBridge ontology, and combine machine learning with ontology-based search of both neuroimaging repositories (e.g. XNAT databases) and open-access full text journals (such as PubMed Central).</Typography>
                 </Slide>
                 <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={3000}>
-                    <ButtonUnstyled to='/about' className={classes.button}>Read More</ButtonUnstyled>
-                </Slide>
+                    <Button href='/about' className={classes.button}>Read More</Button>
+                </Slide> 
             </div>
         </div>
     )

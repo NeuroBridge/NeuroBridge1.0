@@ -2,7 +2,8 @@ import "@fontsource/raleway"
 import "@fontsource/libre-franklin"
 import React from "react";
 import Layout from "./src/components/layout/layout";
-import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import { StylesProvider } from '@mui/styles'
 
 const theme = createTheme({
   palette: {
@@ -26,9 +27,10 @@ const theme = createTheme({
     },
     h2: {
       fontSize: '1.2rem',
-      lineHeight: '1.4',
+      lineHeight: '1.5',
       fontWeight: '600',
       letterSpacing: '.1px',
+      marginBottom: '15px',
     },
     h3: {
       fontSize: '1rem',
@@ -43,10 +45,12 @@ export const wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get
   // including location, data, etc - you don't need to pass it
   return (
-    <ThemeProvider theme={ theme }>
-      <Layout>
-        {element}
-      </Layout>
-    </ThemeProvider>
+    <StylesProvider injectFirst>
+      <ThemeProvider theme={ theme }>
+        <Layout>
+          {element}
+        </Layout>
+      </ThemeProvider>
+   </StylesProvider>
   );
 };

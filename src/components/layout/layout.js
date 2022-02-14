@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import Footer from "./footer"
-import { makeStyles } from "@mui/styles"
+import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles({
   root: {

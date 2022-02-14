@@ -1,13 +1,13 @@
 import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from 'gatsby'
-import { makeStyles } from '@mui/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
-import { Drawer, IconButton } from '@mui/material'
-import { useMediaQuery } from '@mui/material'
+import { Drawer, IconButton } from '@material-ui/core'
+import { useMediaQuery } from '@material-ui/core'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@mui/icons-material'
 //imports for dropdown menu
-import { Button, ButtonUnstyled, Menu, MenuItem, Popover, Typography } from '@mui/material';
+import { Button, Menu, MenuItem, Popover, Typography } from '@material-ui/core';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import classnames from 'classnames'
 
@@ -89,6 +89,7 @@ const useStyles = makeStyles(theme => ({
     padding: '10px',
     backgroundColor: 'white',
     cursor: 'pointer',
+    textTransform: 'capitalize',
   },
   mobileMenuDrawer: {
     // border: '5px dotted crimson',
@@ -218,7 +219,7 @@ const Header = ({ siteTitle }) => {
       {
         !compact && (
             <nav className={classes.navBar}>
-              <ButtonUnstyled
+              <Button
                 id="basic-button"
                 aria-controls="basic-menu"
                 aria-haspopup="true"
@@ -227,7 +228,7 @@ const Header = ({ siteTitle }) => {
                 className={classes.dropDownButton}
               >
                 About Us <KeyboardArrowDownIcon fontSize="small" />
-              </ButtonUnstyled>
+              </Button>
               <Popover
                 id="basic-menu"
                 anchorEl={anchorEl}

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { makeStyles }  from '@mui/styles'
+import { makeStyles }  from '@material-ui/core/styles'
 import { Link } from "gatsby"
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'

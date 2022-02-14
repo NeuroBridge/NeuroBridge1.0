@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Seo from "../components/layout/seo"
-import { makeStyles } from '@mui/styles'
-import { Container, Typography } from '@mui/material'
+import { makeStyles } from '@material-ui/core/styles'
+import { Container, Typography } from '@material-ui/core/'
 import featureImg from '../images/features-5.png'
 import { useWebinars } from '../hooks'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
@@ -10,14 +10,14 @@ import BreadcrumbNav from '../components/layout/breadcrumbs'
 
 const useStyles = makeStyles(theme => ({
   sectionTitle: {
-    '&::after': {
-        content: "--",
-        width: '120px',
-        height: '5px',
-        display: 'inline-block',
-        backgroundColor: '#e6636a',
-        margin: '4px 10px',
-        }, 
+    // '&::after': {
+    //     content: "--",
+    //     width: '120px',
+    //     height: '5px',
+    //     display: 'inline-block',
+    //     backgroundColor: '#e6636a',
+    //     margin: '4px 10px',
+    //     }, 
       },
   container: {
     display: 'flex',

@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Seo from '../components/layout/seo'
-import { makeStyles } from '@mui/styles'
-import { Container, Typography } from '@mui/material'
+import { makeStyles } from '@material-ui/core/styles'
+import { Container, Typography } from '@material-ui/core/'
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'
 import UNCCH from '../images/clients/UNC.png'
