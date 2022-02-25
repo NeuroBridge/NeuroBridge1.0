@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { makeStyles }  from '@mui/styles'
 import { Slide, Typography, ButtonUnstyled } from '@mui/material'
 import welcomeNB from '../images/slide/PdG.jpeg'
+import { useTheme } from '@mui/material/styles'
 
 
 

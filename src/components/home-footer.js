@@ -8,6 +8,7 @@ import UNCCH from '../images/clients/UNC.png'
 import WashingtonUSL from '../images/clients/WUSTL_Medicine.png'
 import georgiaState from '../images/clients/GSU.png'
 import caseWestern from '../images/clients/CWRU.jpeg'
+import { useTheme } from '@mui/material/styles'
 
 const clients= [
     {
@@ -42,7 +43,10 @@ const clients= [
     },
 ]
   
-const useStyles = makeStyles({
+
+const HomeFooter = () => {
+  const useTheme = useStyles()
+  const styles = {
     clients: {
         display: 'flex',
         justifyContent: 'space-around',
@@ -60,18 +64,16 @@ const useStyles = makeStyles({
         }
     }
 
-})
+}
 
-const HomeFooter = () => {
-  const classes = useStyles()
     return (
-      <div className={classes.clients}>
+      <div sx={styles.clients}>
             {clients.map((client)=> (
                 <Link href={client.link}>
                     <img
                         src={client.image}
                         alt={client.name}
-                        className={classes.image}
+                        sx={styles.image}
                     />  
                 </Link>
             ))}
