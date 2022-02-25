@@ -45,7 +45,7 @@ const clients= [
   
 
 const HomeFooter = () => {
-  const useTheme = useStyles()
+  const theme = useTheme()
   const styles = {
     clients: {
         display: 'flex',
