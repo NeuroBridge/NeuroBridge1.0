@@ -4,7 +4,11 @@ import { makeStyles }  from '@mui/styles'
 import { Slide, Typography, ButtonUnstyled } from '@mui/material'
 import welcomeNB from '../images/slide/PdG.jpeg'
 
-const useStyles = makeStyles(theme => ({
+
+
+const HomeHero = () => {
+const theme = useTheme()
+const styles = {
     hero: {
         height: '600px', //make the hero image full screen, must adapt
         backgroundImage: `url(${welcomeNB})`,
@@ -46,14 +50,10 @@ const useStyles = makeStyles(theme => ({
             cursor: 'pointer',
         }
     }
-}))
-
-const HomeHero = () => {
-const classes = useStyles()
-
+}
     return (
-        <div className={classes.hero}>
-            <div className={classes.caption}>
+        <div sx={styles.hero}>
+            <div sx={styles.caption}>
                 <Slide direction='down' in='true' mountOnEnter unmountOnExit timeout={800}>                
                     <Typography variant='h1'>Welcome to NeuroBridge</Typography>
                 </Slide>
@@ -61,7 +61,7 @@ const classes = useStyles()
                     <Typography paragraph>A platform for data discovery to enhance the reuse of clinical neuroscience/neuroimaging data. We develop the NeuroBridge ontology, and combine machine learning with ontology-based search of both neuroimaging repositories (e.g. XNAT databases) and open-access full text journals (such as PubMed Central).</Typography>
                 </Slide>
                 <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={3000}>
-                    <ButtonUnstyled to='/about' className={classes.button}>Read More</ButtonUnstyled>
+                    <ButtonUnstyled to='/about' sx={styles.button}>Read More</ButtonUnstyled>
                 </Slide>
             </div>
         </div>
