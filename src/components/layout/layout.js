@@ -6,17 +6,20 @@ import Header from "./header"
 import "./layout.css"
 import Footer from "./footer"
 import { makeStyles } from "@mui/styles"
+import { useTheme } from "@mui/material/styles"
 
-const useStyles = makeStyles({
-  root: {
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  
-})
+
 const Layout = ({ children }) => {
-  const classes = useStyles()
+  const theme = useTheme()
+
+  const styles = {
+    root: {
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+  }
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,7 +31,7 @@ const Layout = ({ children }) => {
   `)
   
   return (
-    <div className={classes.root}>
+    <div sx={styles.root}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <div
           style={{

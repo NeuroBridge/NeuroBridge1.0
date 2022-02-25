@@ -7,6 +7,7 @@ import welcomeNB from '../images/slide/PdG.jpeg'
 const useStyles = makeStyles(theme => ({
     hero: {
         height: '600px', //make the hero image full screen, must adapt
+        backgroundImage: `url(${welcomeNB})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center 33%',
@@ -51,7 +52,7 @@ const HomeHero = () => {
 const classes = useStyles()
 
     return (
-        <div className={classes.hero} style={{ backgroundImage: `url(${ welcomeNB })` }}>
+        <div className={classes.hero}>
             <div className={classes.caption}>
                 <Slide direction='down' in='true' mountOnEnter unmountOnExit timeout={800}>                
                     <Typography variant='h1'>Welcome to NeuroBridge</Typography>

@@ -1,28 +1,29 @@
 import * as React from "react"
 import { makeStyles }  from '@mui/styles'
+import { useTheme } from '@mui/material/styles'
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        background: '#4a5562',
-        padding: '30px 0 30px 0',
-        color: '#fff',
-        fontSize: '14px',
-    },
-    copyright: {
-        textAlign: 'center',
-        paddingTop: '30px',
-    }
-    
-}))
 
 
 const Footer = () => {
-    const classes = useStyles()
-
+    const theme = useTheme()
+    const styles = {
+        root: {
+            backgroundColor: '#4a5562',
+            padding: '30px 0 30px 0',
+            color: theme.palette.error.main,
+            fontSize: '14px',
+        },
+        copyright: {
+            textAlign: 'center',
+            paddingTop: '30px',
+        }
+        
+    }
+    
     return (
         <footer>
-            <div className={classes.root}>
-                <div className={classes.copyright}>
+            <div sx={styles.root}>
+                <div sx={styles.copyright}>
                     &copy; Copyright <strong><span>NeuroBridge</span></strong>. All Rights Reserved 2021
                 </div>
             </div>

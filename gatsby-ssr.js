@@ -1,7 +1,23 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+import "@fontsource/raleway"
+import "@fontsource/libre-franklin"
+import React from "react";
+import Layout from "./src/components/layout/layout";
+import { ThemeProvider } from '@mui/material/styles'
+import { theme } from './src/theme'
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element, props }) => {
+  return (
+    <ThemeProvider theme={ theme }>
+      { element }
+    </ThemeProvider>
+  )
+}
+
+
+export const wrapPageElement = ({ element, props }) => {
+  return (
+    <Layout>
+      { element }
+    </Layout>
+  )
+}
