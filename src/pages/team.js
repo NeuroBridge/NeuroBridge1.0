@@ -11,14 +11,11 @@ import { useTheme } from '@mui/material/styles'
 const TeamPage = () => {
     const theme = useTheme()
     const styles = {
-        h1: {
-            color: 'blue',
-        },
         container: {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'space-between',
-    
+
         },
         card: {
             position: 'relative',
@@ -31,11 +28,12 @@ const TeamPage = () => {
         },
         photo: {
             padding: '20px',
-            width: '220px',
+            flex: '0 0 220px'
     
         },
         cardContent: {
             padding: '0px 10px',
+            flex: '1'
         },
         teamName: {
             color: '#DC143C',
@@ -65,7 +63,7 @@ const TeamPage = () => {
             <Seo title="NeuroBridge Team" />
             <BreadcrumbNav crumbs={breadcrumbs} title="Our Team"/>
             <Container>
-                {/* <Typography variant='h1'>Our Team</Typography> */}
+                <Typography variant='h1'>Our Team</Typography>
                 <Grid container spacing={2} sx={styles.container}>
                     {team.map(person => {
                         const photo = getImage(person.photo)
