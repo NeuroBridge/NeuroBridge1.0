@@ -1,5 +1,5 @@
 import * as React from "react"
-import { makeStyles }  from '@mui/styles'
+  
 import featureImg1 from '../images/features-2.png'
 import featureImg2 from '../images/features-3.png'
 import featureImg3 from '../images/features-4.png'

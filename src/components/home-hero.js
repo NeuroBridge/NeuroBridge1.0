@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link } from 'gatsby'
-import { makeStyles }  from '@mui/styles'
-import { Slide, Typography, ButtonUnstyled } from '@mui/material'
+  
+import { Slide, Typography, Button, ButtonUnstyled } from '@mui/material'
 import welcomeNB from '../images/slide/PdG.jpeg'
 import { useTheme } from '@mui/material/styles'
-
+import { Box } from "@mui/material"
 
 
 const HomeHero = () => {
@@ -53,8 +53,8 @@ const styles = {
     }
 }
     return (
-        <div sx={styles.hero}>
-            <div sx={styles.caption}>
+    <Box sx={styles.hero}>
+            <Box sx={styles.caption}>
                 <Slide direction='down' in='true' mountOnEnter unmountOnExit timeout={800}>                
                     <Typography variant='h1'>Welcome to NeuroBridge</Typography>
                 </Slide>
@@ -62,10 +62,10 @@ const styles = {
                     <Typography paragraph>A platform for data discovery to enhance the reuse of clinical neuroscience/neuroimaging data. We develop the NeuroBridge ontology, and combine machine learning with ontology-based search of both neuroimaging repositories (e.g. XNAT databases) and open-access full text journals (such as PubMed Central).</Typography>
                 </Slide>
                 <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={3000}>
-                    <ButtonUnstyled to='/about' sx={styles.button}>Read More</ButtonUnstyled>
+                    <Button to='/about' sx={styles.button}>Read More</Button>
                 </Slide>
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }
 

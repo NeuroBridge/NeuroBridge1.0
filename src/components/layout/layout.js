@@ -1,13 +1,10 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
-import "./layout.css"
 import Footer from "./footer"
-import { makeStyles } from "@mui/styles"
+import "./layout.css"
 import { useTheme } from "@mui/material/styles"
-
 
 const Layout = ({ children }) => {
   const theme = useTheme()

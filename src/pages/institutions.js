@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Seo from '../components/layout/seo'
-import { makeStyles } from '@mui/styles'
+ 
 import { Container, Typography } from '@mui/material'
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'
@@ -10,6 +10,8 @@ import WashingtonUSL from '../images/clients/WUSTL_Medicine.png'
 import georgiaState from '../images/clients/GSU.png'
 import caseWestern from '../images/clients/CWRU.jpeg'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
+import { useTheme } from '@mui/material/styles'
+import { Box } from "@mui/system"
 
 const participatingInstitutions = [
     { name: 'Ohio State University',      logo: ohioState },
@@ -21,43 +23,44 @@ const participatingInstitutions = [
 
 ]
 
-const useStyles = makeStyles(theme =>({
-    container: {
-        // fontSize: '20px',
-        // backgroundColor: 'red',
-        '& h1': {
-            fontSize: '2.25rem',
-            fontWeight: '600',
-            marginBottom: '10px',
-            letterSpacing: '0.01rem',
-            fontFamily: 'Libre Franklin'
-        },
-        '& h6': {
-            fontSize: '1.3rem',
-        }
-    },
-    logoContainer: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-
-    },
-    logo: {
-        padding: '20px',
-        height: '150px',
-        filter: 'opacity(.5) saturate(.5)',
-        transition: 'all 0.4s ease-in-out',
-        '&:hover': {
-          filter: 'opacity(1) saturate(1)',
-          transform: 'scale(1.15)'
-
-        }
-
-    },
-}))
 
 const InstitutionsPage = () => {
-    const classes = useStyles()
+    const theme = useTheme()
+    const styles = {
+        container: {
+            // fontSize: '20px',
+            // backgroundColor: 'red',
+            '& h1': {
+                fontSize: '2.25rem',
+                fontWeight: '600',
+                marginBottom: '10px',
+                letterSpacing: '0.01rem',
+                fontFamily: 'Libre Franklin'
+            },
+            '& h6': {
+                fontSize: '1.3rem',
+            }
+        },
+        logoContainer: {
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+    
+        },
+        logo: {
+            padding: '20px',
+            height: '150px',
+            filter: 'opacity(.5) saturate(.5)',
+            transition: 'all 0.4s ease-in-out',
+            '&:hover': {
+              filter: 'opacity(1) saturate(1)',
+              transform: 'scale(1.15)'
+    
+            }
+    
+        },
+    }
+    
     const breadcrumbs = [
         { text: 'Home', path: '/' },
         { text: 'About NeuroBridge', path: '/about' },
@@ -69,16 +72,17 @@ const InstitutionsPage = () => {
         <>
             <Seo title="Participating Institutions" />
             <BreadcrumbNav crumbs={breadcrumbs} />
-            <Container className={classes.container}>
-                <Typography variant='h1' className={classes.title}>NeuroBridge</Typography>
+            <Container sx={styles.container}>
+                <Typography variant='h1' sx={styles.title}>NeuroBridge</Typography>
                 <Typography variant='subtitle1'>NIH NIDA Award number: R01DA053028</Typography>
-                <div className={classes.logoContainer}>
+                <div sx={styles.logoContainer}>
                     { participatingInstitutions.map(( item ) => (
-                        <img
+                        <Box
+                            component='img'
                             key={item.name}
                             src={item.logo}
                             alt={item.name}
-                            className={classes.logo}
+                            sx={styles.logo}
                         />
                     ))}
                 </div>

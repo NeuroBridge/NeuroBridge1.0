@@ -1,10 +1,12 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from 'gatsby'
 import Seo from '../components/layout/seo'
-import { makeStyles } from '@mui/styles'
+ 
 import { Container, Typography } from '@mui/material'
 import featureImg from '../images/features-1.png'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
+import { useTheme } from '@mui/material/styles'
+import { Box, Link as MuiLink } from "@mui/material"
 
 const software = [
     {
@@ -17,50 +19,42 @@ const software = [
     },
 ]
 
-const useStyles = makeStyles(theme => ({
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
 
-    },
-    sectionTitle: {
-        '&::after': {
-            content: "--",
-            width: '120px',
-            height: '1px',
-            display: 'inline-block',
-            background: '#e6636a',
-            margin: '4px 10px',
-          },
-    },
-    resourceContainer: {
-        display: 'flex',
-        paddingBottom: '30px',
-    },
-    resourceList: {
-        width: '30%',
-        borderRight: 'solid',
-        borderWidth: '1px',
-        borderColor: 'red',
-
-    },
-    resourceLinkLeft: {
-    },
-    resourceContent: {
-        padding: '20px',
-        display: 'flex',
-
-    },
-    image: {
-        padding: '20px',
-        maxWidth: '250px',
-
-    },
-}))
 
 const SoftwarePage = () => {
-    const classes = useStyles()
+    const theme = useTheme()
+    const styles = {
+        container: {
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+    
+        },
+        sectionTitle: {
+            
+        },
+        resourceContainer: {
+            display: 'flex',
+            paddingBottom: '30px',
+        },
+        resourceList: {
+            width: '30%',
+            borderRight: 'solid',
+            borderWidth: '1px',
+            borderColor: 'red',
+        },
+        resourceLinkLeft: {
+        },
+        resourceContent: {
+            padding: '20px',
+            display: 'flex',
+        },
+        image: {
+            padding: '20px',
+            maxWidth: '250px',
+        },
+    }
+
     const breadcrumbs = [
         { text: 'Home', path: '/' },
         { text: 'Resources', path: '/software' },
@@ -71,33 +65,34 @@ const SoftwarePage = () => {
             <Seo title="NeuroBridge Software" />
             <BreadcrumbNav crumbs={breadcrumbs} />
             <Container>
-                <Typography paragraph className={classes.sectionTitle}>Software</Typography>
+                <Typography paragraph sx={styles.sectionTitle}>Software</Typography>
                 <Typography variant='h1'>Our Latest Updated Software</Typography>
-                <div className={classes.container}>
+                <Box sx={styles.container}>
                     {software.map((item) => (
-                        <div key={item.name} className={classes.resourceContainer}>
-                            <div className={classes.resourceList}>
-                                <Link to={item.resourceLink} className={classes.resourceLinkLeft}>Github</Link>
-                            </div>
-                            <div className={classes.resourceContent}>
-                                <div>
+                        <Box key={item.name} sx={styles.resourceContainer}>
+                            <Box sx={styles.resourceList}>
+                                <MuiLink component={GatsbyLink} to={item.resourceLink} sx={styles.resourceLinkLeft}>Github</MuiLink>
+                            </Box>
+                            <Box sx={styles.resourceContent}>
+                                <Box>
                                     <Typography variant='h2'>{item.title}</Typography>
                                     <Typography variant='h3'>{item.subheading}</Typography>
                                     <Typography paragraph>{item.text}</Typography>
-                                    <Link to={item.resourceLink}>Github</Link>
-                                </div>
-                                <img
+                                    <MuiLink component={GatsbyLink} to={item.resourceLink}>Github</MuiLink>
+                                </Box>
+                                <Box
+                                    component='img'
                                     key={item.name}
                                     src={item.photo}
                                     alt={item.name}
-                                    className={classes.image}
+                                    sx={styles.image}
                                 />
-                            </div>
+                            </Box>
 
-                        </div>
+                        </Box>
 
                     ))}
-                </div>
+                </Box>
             </Container>
         </>
     )

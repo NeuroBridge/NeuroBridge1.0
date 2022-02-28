@@ -1,6 +1,7 @@
 import * as React from "react"
-import { makeStyles }  from '@mui/styles'
+  
 import { useTheme } from '@mui/material/styles'
+import { Box } from "@mui/material"
 
 
 
@@ -22,11 +23,11 @@ const Footer = () => {
     
     return (
         <footer>
-            <div sx={styles.root}>
-                <div sx={styles.copyright}>
+            <Box sx={styles.root}>
+                <Box sx={styles.copyright}>
                     &copy; Copyright <strong><span>NeuroBridge</span></strong>. All Rights Reserved 2021
-                </div>
-            </div>
+                </Box>
+            </Box>
         </footer>
     )
 }

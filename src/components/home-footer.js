@@ -1,6 +1,6 @@
 import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { makeStyles }  from '@mui/styles'
+  
 import { Link } from "gatsby"
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'
@@ -9,6 +9,7 @@ import WashingtonUSL from '../images/clients/WUSTL_Medicine.png'
 import georgiaState from '../images/clients/GSU.png'
 import caseWestern from '../images/clients/CWRU.jpeg'
 import { useTheme } from '@mui/material/styles'
+import { Box } from "@mui/material"
 
 const clients= [
     {
@@ -67,17 +68,18 @@ const HomeFooter = () => {
 }
 
     return (
-      <div sx={styles.clients}>
+      <Box sx={styles.clients}>
             {clients.map((client)=> (
                 <Link href={client.link}>
-                    <img
+                    <Box
+                        component='img'
                         src={client.image}
                         alt={client.name}
                         sx={styles.image}
                     />  
                 </Link>
             ))}
-      </div>
+      </Box>
     )
 }
 export default HomeFooter
