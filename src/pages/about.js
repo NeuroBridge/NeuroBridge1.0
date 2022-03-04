@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Seo from "../components/layout/seo"
-import { Container, Box, Typography } from '@material-ui/core/'
+import { Container, Box, Typography } from '@mui/material'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
 import { useTheme } from '@mui/material/styles'
 
