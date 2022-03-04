@@ -1,15 +1,11 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Seo from "../components/layout/seo"
- 
-import { Container, Typography } from '@mui/material'
 import featureImg from '../images/features-5.png'
 import { useWebinars } from '../hooks'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
 import { useTheme } from '@mui/material/styles'
-import { Box } from "@mui/material"
-
-
+import { Container, Typography, Box } from '@mui/material'
 
 const PublicationPage = () => {
   const webinars = useWebinars()
@@ -24,9 +20,6 @@ const PublicationPage = () => {
     publicationType: {
       padding: '10px',
       width: '25%',
-      '& h2': {
-        // fontSize: '14pt',
-      }
     },
     publicationList: {
       padding: '10px',
@@ -49,9 +42,9 @@ const PublicationPage = () => {
   return (
     <>
       <Seo title="Publications" />
-      <BreadcrumbNav crumbs={breadcrumbs} />
+      <BreadcrumbNav crumbs={breadcrumbs} title='Publications'/>
       <Container>
-        <Typography paragraph sx={styles.sectionTitle}>Publications</Typography>
+        {/* <Typography paragraph sx={styles.sectionTitle}>Publications</Typography> */}
         <Typography variant='h1'>Neurobridge Publications</Typography>
         <Box sx={styles.container}>
           <Box sx={styles.publicationType}>

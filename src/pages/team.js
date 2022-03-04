@@ -1,7 +1,6 @@
 import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from '../components/layout/seo'
- 
 import { Container, Card, CardMedia, CardContent, Typography, Grid } from '@mui/material'
 import { useGenericAvatar, useTeam } from '../hooks'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
@@ -36,11 +35,10 @@ const TeamPage = () => {
             flex: '1'
         },
         teamName: {
-            color: '#DC143C',
+            color: theme.palette.text.secondary,
             paddingBottom: '10px',
             fontWeight: '600',
             fontSize: ['1.2rem', '!important'],
-            fontWeight: [600, '!important'],
             fontFamily: ['Libre Franklin', '!important'],
         },
         teamBio: {

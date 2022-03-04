@@ -1,8 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Seo from '../components/layout/seo'
- 
-import { Container, Typography } from '@mui/material'
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'
 import UNCCH from '../images/clients/UNC.png'
@@ -10,8 +8,8 @@ import WashingtonUSL from '../images/clients/WUSTL_Medicine.png'
 import georgiaState from '../images/clients/GSU.png'
 import caseWestern from '../images/clients/CWRU.jpeg'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
+import { Container, Typography, Box } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import { Box } from "@mui/system"
 
 const participatingInstitutions = [
     { name: 'Ohio State University',      logo: ohioState },
@@ -23,22 +21,14 @@ const participatingInstitutions = [
 
 ]
 
-
 const InstitutionsPage = () => {
     const theme = useTheme()
     const styles = {
         container: {
-            // fontSize: '20px',
-            // backgroundColor: 'red',
             '& h1': {
-                fontSize: '2.25rem',
-                fontWeight: '600',
                 marginBottom: '10px',
-                letterSpacing: '0.01rem',
-                fontFamily: 'Libre Franklin'
             },
             '& h6': {
-                fontSize: '1.3rem',
             }
         },
         logoContainer: {

@@ -13,9 +13,6 @@ const AboutPage = () => {
     container: {
       display: 'flex',
       flexDirection: 'row',
-      '& h1': {
-  
-      },
       '& h2': {
         paddingTop: '1.1rem',
         color: 'grey',
@@ -28,19 +25,15 @@ const AboutPage = () => {
     textColumn: {
       flexGrow: '3',
       padding: '20px',
-  
-      // border: '5px dashed blue'
-    },
+      },
     infoBox: {
       width: '100%',
       textAlign: 'center',
       '& a': {
         textDecoration: 'none',
-        color: '#DC143C',
+        color: theme.palette.text.secondary,
       },
       '& h3': {
-        fontWeight: '500',
-        fontSize: '26px',
         paddingTop: '10px',
         paddingBottom: '20px',
       }

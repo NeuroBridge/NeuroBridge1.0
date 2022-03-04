@@ -5,6 +5,7 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 import { useTheme } from "@mui/material/styles"
+import { Box } from '@mui/material'
 
 const Layout = ({ children }) => {
   const theme = useTheme()
@@ -28,9 +29,9 @@ const Layout = ({ children }) => {
   `)
   
   return (
-    <div sx={styles.root}>
+    <Box sx={styles.root}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <div
+        <Box
           style={{
             margin: `0`,
             width: `100%`,
@@ -39,9 +40,9 @@ const Layout = ({ children }) => {
           }}
         >
           <main>{children}</main>
-        </div>
+        </Box>
       <Footer/>
-    </div>
+    </Box>
   )
 }
 

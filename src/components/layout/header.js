@@ -1,27 +1,20 @@
 import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
 import { Link as GatsbyLink } from 'gatsby'
-
-import { Drawer, IconButton } from '@mui/material'
 import { useMediaQuery } from '@mui/material'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@mui/icons-material'
-//imports for dropdown menu
-import { Button, ButtonUnstyled, Menu, MenuItem, Popover, Typography } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import classnames from 'classnames'
-import { Box, Link as MuiLink } from "@mui/material"
+import { Box, Link as MuiLink, Drawer, IconButton, Button, MenuItem, Popover, Typography } from "@mui/material"
 import { useTheme } from '@mui/material/styles'
 
 const mainMenuLinks = [
   { text: 'Resources',      path: '/software' },
   { text: 'Publications',   path: '/publication' },
-
 ]
 const aboutUs = [
     { text: 'What is NeuroBridge?',         path: '/about' },
     { text: 'Our Team',                     path: '/team' },
     { text: 'Participating Institutions',   path: '/institutions' },
-  
 ]
 const resources = [
   { text: 'Resources',      path: '/software' },
@@ -54,13 +47,10 @@ const Header = ({ siteTitle }) => {
     logo: {
       margin: '0',
       padding: '0',
-      lineHeight: '1',
-      fontWeight: '700',
       textTransform: 'uppercase',
-      color: '#4a5562',
+      color: theme.palette.grey.A700,
       letterSpacing: '1px',
-      fontSize: ['1.7rem', '!important'],
-      
+      font: '700 1.7rem/1 Libre Franklin '
     },
     navBar: {
       display: 'flex',
@@ -69,7 +59,7 @@ const Header = ({ siteTitle }) => {
       padding: '10px 0 10px 30px',
       fontSize: '16px',
       fontWeight: '500',
-      color: '#556270',
+      color: theme.palette.primary.main,
       whiteSpace: 'nowrap',
       transition: '0.3s',
     },
@@ -105,23 +95,23 @@ const Header = ({ siteTitle }) => {
     mobileMenuItem: {
       fontSize: '1.2rem',
       padding: '1rem',
-      color: '#556270',
+      color: theme.palette.primary.main,
       backgroundColor: 'transparent',
       textDecoration: 'none',
       transition: 'background-color 250ms',
       '&:hover': {
-        backgroundColor: '#f5f5f5',
+        backgroundColor: theme.palette.grey.A200,
       },
     },
     mobileMenuSubItem: {
       fontSize: '1rem',
       padding: '1rem',
-      color: '#556270',
+      color: theme.palette.primary.main,
       backgroundColor: 'transparent',
       textDecoration: 'none',
       transition: 'background-color 250ms',
       '&:hover': {
-        backgroundColor: '#f5f5f5',
+        backgroundColor: theme.palette.grey.A200,
       },
       marginLeft: '20px',
     },

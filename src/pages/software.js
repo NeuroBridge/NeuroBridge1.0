@@ -1,12 +1,10 @@
 import * as React from "react"
 import { Link as GatsbyLink } from 'gatsby'
 import Seo from '../components/layout/seo'
- 
-import { Container, Typography } from '@mui/material'
 import featureImg from '../images/features-1.png'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
 import { useTheme } from '@mui/material/styles'
-import { Box, Link as MuiLink } from "@mui/material"
+import { Box, Link as MuiLink, Container, Typography } from "@mui/material"
 
 const software = [
     {
@@ -62,10 +60,10 @@ const SoftwarePage = () => {
 
     return (
         <>
-            <Seo title="NeuroBridge Software" />
-            <BreadcrumbNav crumbs={breadcrumbs} />
+            <Seo title="NeuroBridge Resources" />
+            <BreadcrumbNav crumbs={breadcrumbs} title='Resources'/>
             <Container>
-                <Typography paragraph sx={styles.sectionTitle}>Software</Typography>
+                {/* <Typography paragraph sx={styles.sectionTitle}>Software</Typography> */}
                 <Typography variant='h1'>Our Latest Updated Software</Typography>
                 <Box sx={styles.container}>
                     {software.map((item) => (
