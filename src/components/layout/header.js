@@ -16,12 +16,15 @@ const aboutUs = [
     { text: 'Our Team',                     path: '/team' },
     { text: 'Participating Institutions',   path: '/institutions' },
 ]
+
+/* eslint-disable no-unused-vars */
 const resources = [
   { text: 'Resources',      path: '/software' },
   { text: 'Publications',   path: '/publications' },
 ]
 
 const Header = ({ siteTitle }) => {
+  /* eslint-disable no-unused-vars */
   const theme = useTheme()
   const styles = {
     root: {
@@ -35,6 +38,7 @@ const Header = ({ siteTitle }) => {
       backgroundColor: 'white',
       padding: '10px 30px',
       zIndex: '10',
+      height: '5rem'
     },
     brand: {
       margin:'0 1rem 0 2rem',
@@ -118,8 +122,8 @@ const Header = ({ siteTitle }) => {
     active: {
     },
     menuToggler: {
-      position: 'fixed',
-      top: '0',
+      // position: 'fixed',
+      // top: '0',
       right: '1rem',
       zIndex: '999',
     }
@@ -244,7 +248,7 @@ const Header = ({ siteTitle }) => {
               >
                 {
                   aboutUs.map(({ path, text }) => (
-                      <MenuItem onclick={handleClose} key={ `main-menu-${ text }` }>
+                      <MenuItem onClick={handleClose} key={ `main-menu-${ text }` }>
                           <MuiLink
                           component={GatsbyLink}
                           to={ path }
