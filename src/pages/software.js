@@ -17,8 +17,6 @@ const software = [
     },
 ]
 
-
-
 const SoftwarePage = () => {
     const theme = useTheme()
     const styles = {

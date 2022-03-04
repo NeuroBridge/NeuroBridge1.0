@@ -1,6 +1,5 @@
 import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-  
 import { Link } from "gatsby"
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'

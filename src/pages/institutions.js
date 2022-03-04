@@ -18,7 +18,6 @@ const participatingInstitutions = [
     { name: 'Washington University at Saint Louis',      logo: WashingtonUSL },
     { name: 'Georgia State University',      logo: georgiaState },
     { name: 'Case Western University',      logo: caseWestern },
-
 ]
 
 const InstitutionsPage = () => {

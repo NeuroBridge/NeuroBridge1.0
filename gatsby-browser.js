@@ -13,7 +13,6 @@ export const wrapRootElement = ({ element, props }) => {
   )
 }
 
-
 export const wrapPageElement = ({ element, props }) => {
   return (
     <Layout>

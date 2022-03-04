@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link } from 'gatsby'
-  
 import { Slide, Typography, Button, ButtonUnstyled } from '@mui/material'
 import welcomeNB from '../images/slide/PdG.jpeg'
 import { useTheme } from '@mui/material/styles'
@@ -16,6 +15,7 @@ const styles = {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center 33%',
+        
     },
     caption: {
         '& h1': {        
@@ -47,14 +47,22 @@ const styles = {
         padding: '10px 30px',
         boxShadow: '0px 2px 15px rgba(85, 98, 112, 0.08)',
         margin: '10px',
-        '&:hover':{
+        textTransform: 'capitalize',
+        '&:hover': {
             cursor: 'pointer',
+            borderWidth: '1px',
+            borderColor: '#f54568', //red
+            backgroundColor: '#f54568', //red
+            color: '#fff', //white
+            textTransform: 'capitalize',
+
         }
     }
 }
     return (
     <Box sx={styles.hero}>
             <Box sx={styles.caption}>
+
                 <Slide direction='down' in='true' mountOnEnter unmountOnExit timeout={800}>                
                     <Typography variant='h1'>Welcome to NeuroBridge</Typography>
                 </Slide>
