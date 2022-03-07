@@ -4,6 +4,7 @@ import Seo from '../components/layout/seo'
 import featureImg from '../images/features-1.png'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
 import { Box, Link as MuiLink, Container, Typography } from "@mui/material"
+import { useTheme } from '@mui/material/styles'
 
 const software = [
     {
@@ -17,6 +18,7 @@ const software = [
 ]
 
 const SoftwarePage = () => {
+    const theme = useTheme()
     const styles = {
         contentContainer: {
             display: 'flex',
