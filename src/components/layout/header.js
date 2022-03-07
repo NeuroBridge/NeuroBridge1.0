@@ -1,148 +1,133 @@
 import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
-import { Link } from 'gatsby'
-import { makeStyles } from '@material-ui/core/styles'
-
-import { Drawer, IconButton } from '@material-ui/core'
-import { useMediaQuery } from '@material-ui/core'
+import { Link as GatsbyLink } from 'gatsby'
+import { useMediaQuery } from '@mui/material'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@mui/icons-material'
-//imports for dropdown menu
-import { Button, Menu, MenuItem, Popover, Typography } from '@material-ui/core';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import classnames from 'classnames'
+import { Box, Link as MuiLink, Drawer, IconButton, Button, MenuItem, Popover, Typography } from "@mui/material"
+import { useTheme } from '@mui/material/styles'
 
 const mainMenuLinks = [
   { text: 'Resources',      path: '/software' },
   { text: 'Publications',   path: '/publication' },
-
 ]
 const aboutUs = [
     { text: 'What is NeuroBridge?',         path: '/about' },
     { text: 'Our Team',                     path: '/team' },
     { text: 'Participating Institutions',   path: '/institutions' },
-  
 ]
+
+/* eslint-disable no-unused-vars */
 const resources = [
   { text: 'Resources',      path: '/software' },
   { text: 'Publications',   path: '/publications' },
 ]
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    position: 'fixed',
-    top: '0',
-    width: '100%',
-    overflow: 'hidden',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: 'white',
-    padding: '10px 30px',
-    zIndex: '10',
-  },
-  brand: {
-    margin:'0 1rem 0 2rem',
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    textDecoration: ['none', '!important'],
-  },
-
-  logo: {
-    margin: '0',
-    padding: '0',
-    lineHeight: '1',
-    fontWeight: '700',
-    textTransform: 'uppercase',
-    color: '#4a5562',
-    letterSpacing: '1px',
-    fontSize: ['1.7rem', '!important'],
-    
-  },
-  navBar: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '10px 0 10px 30px',
-    fontSize: '16px',
-    fontWeight: '500',
-    color: '#556270',
-    whiteSpace: 'nowrap',
-    transition: '0.3s',
-  },
-  menuItem: {
-    color: 'grey',
-    padding: '10px',
-    letterSpacing: '1px',
-    textDecoration: 'none',
-    fontWeight: '500',
-  },
-  dropDownButton: {
-    textDecoration: 'none',
-    color: 'grey',
-    border: 'none',
-    fontSize: '16px',
-    fontWeight: '500',
-    display: 'flex',
-    alignItems: 'center',
-    letterSpacing: '1px',
-    padding: '10px',
-    backgroundColor: 'white',
-    cursor: 'pointer',
-    textTransform: 'capitalize',
-  },
-  mobileMenuDrawer: {
-    // border: '5px dotted crimson',
-  },
-  mobileMenuPaper: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    fontSize: '200%',
-    backgroundImage: 'linear-gradient(to bottom, #ffffff, #f4e8dd)',
-    // border: '5px dotted blue',
-    padding: '20px',
-  },
-  mobileMenuItem: {
-    fontSize: '1.2rem',
-    padding: '1rem',
-    color: '#556270',
-    backgroundColor: 'transparent',
-    textDecoration: 'none',
-    transition: 'background-color 250ms',
-    '&:hover': {
-      backgroundColor: '#f5f5f5',
-    },
-    // border: '5px dotted purple',
-
-  },
-  mobileMenuSubItem: {
-    fontSize: '1rem',
-    padding: '1rem',
-    color: '#556270',
-    backgroundColor: 'transparent',
-    textDecoration: 'none',
-    transition: 'background-color 250ms',
-    '&:hover': {
-      backgroundColor: '#f5f5f5',
-    },
-    marginLeft: '20px',
-    // border: '5px dotted green',
-
-  },
-  active: {
-
-  },
-  menuToggler: {
-    position: 'fixed',
-    top: '0',
-    right: '1rem',
-    zIndex: '999',
-  }
-}))
-
 const Header = ({ siteTitle }) => {
-  const classes = useStyles()
+  const theme = useTheme()
+  const styles = {
+    root: {
+      position: 'fixed',
+      top: '0',
+      width: '100%',
+      overflow: 'hidden',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      backgroundColor: 'white',
+      padding: '10px 30px',
+      zIndex: '10',
+      height: '5rem'
+    },
+    brand: {
+      margin:'0 1rem 0 2rem',
+      display: 'flex',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      textDecoration: ['none', '!important'],
+    },
+  
+    logo: {
+      margin: '0',
+      padding: '0',
+      textTransform: 'uppercase',
+      color: theme.palette.grey.A700,
+      letterSpacing: '1px',
+      font: '700 1.7rem/1 Libre Franklin '
+    },
+    navBar: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '10px 0 10px 30px',
+      fontSize: '16px',
+      fontWeight: '500',
+      color: theme.palette.primary.main,
+      whiteSpace: 'nowrap',
+      transition: '0.3s',
+    },
+    menuItem: {
+      color: 'grey',
+      padding: '10px',
+      letterSpacing: '1px',
+      textDecoration: 'none',
+      fontWeight: '500',
+    },
+    dropDownButton: {
+      textDecoration: 'none',
+      color: 'grey',
+      border: 'none',
+      fontSize: '16px',
+      fontWeight: '500',
+      display: 'flex',
+      alignItems: 'center',
+      letterSpacing: '1px',
+      padding: '10px',
+      backgroundColor: 'white',
+      cursor: 'pointer',
+      textTransform: 'capitalize'
+    },
+    mobileMenuPaper: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      fontSize: '200%',
+      backgroundImage: 'linear-gradient(to bottom, #ffffff, #f4e8dd)',
+      padding: '20px',
+    },
+    mobileMenuItem: {
+      fontSize: '1.2rem',
+      padding: '1rem',
+      color: theme.palette.primary.main,
+      backgroundColor: 'transparent',
+      textDecoration: 'none',
+      transition: 'background-color 250ms',
+      '&:hover': {
+        backgroundColor: theme.palette.grey.A200,
+      },
+    },
+    mobileMenuSubItem: {
+      fontSize: '1rem',
+      padding: '1rem',
+      color: theme.palette.primary.main,
+      backgroundColor: 'transparent',
+      textDecoration: 'none',
+      transition: 'background-color 250ms',
+      '&:hover': {
+        backgroundColor: theme.palette.grey.A200,
+      },
+      marginLeft: '20px',
+    },
+    active: {
+    },
+    menuToggler: {
+      // position: 'fixed',
+      // top: '0',
+      right: '1rem',
+      zIndex: '999',
+    }
+  }
+
   const compact = useMediaQuery('(max-width: 1142px)');
   // const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -164,46 +149,60 @@ const Header = ({ siteTitle }) => {
 
   return (
 
-    <header className={classes.root}>
-      <Link to='/' className={classes.brand}>
-        <Typography variant='h1' className={classes.logo}>NeuroBridge</Typography>
-      </Link>
+    <Box component="header" sx={styles.root}>
+      <MuiLink 
+        component={GatsbyLink}
+        to='/'
+        sx={styles.brand}
+      >
+        <Typography variant='h1' sx={styles.logo}>NeuroBridge</Typography>
+      </MuiLink>
       {
         compact && (
           <Fragment>
-            <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } classes={{ root: classes.mobileMenuDrawer, paper: classes.mobileMenuPaper }}>
-              <Link to="/" className={ classes.brand } style={{ margin: '1rem auto' }}>
-                <Typography variant='h1' className={classes.logo}>NeuroBridge</Typography>
-              </Link>
-              <Link
+            <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } sx={styles.mobileMenuPaper}>
+              <MuiLink
+                component={GatsbyLink}
+                to="/" 
+                sx={ styles.brand } 
+                style={{ margin: '1rem auto' }}
+              >
+                <Typography variant='h1' sx={styles.logo}>NeuroBridge</Typography>
+              </MuiLink>
+              <MuiLink
+                component={GatsbyLink}
                 to="/"
                 key={ `mobile-main-menu-home` }
-                className={ classnames(classes.mobileMenuItem) }
+                sx={styles.mobileMenuItem}
                 onClick={ () => setMenuOpen(false) }
-              >About Us</Link>
+              >About Us</MuiLink>
               {
                 aboutUs.map(({ path, text }) => (
-                    <Link
-                    to={ path }
-                    key={ `main-menu-${ text }` }
-                    className={ classnames(classes.mobileMenuSubItem) }
-                    onClick={ () => setMenuOpen(false) }
-                    >{ text }</Link>
+                    <MuiLink
+                      component={GatsbyLink}
+                      to={ path }
+                      key={ `main-menu-${ text }` }
+                      sx={styles.mobileMenuSubItem}
+                      onClick={ () => setMenuOpen(false) }
+                    >
+                      { text }
+                    </MuiLink>
                 ))
               }
               {
                 mainMenuLinks.map(({ path, text }) => (
-                  <Link
+                  <MuiLink
+                    component={GatsbyLink}
                     to={ path }
                     key={ `mobile-main-menu-${ text }` }
-                    className={ classnames(classes.mobileMenuItem) }
+                    sx={styles.mobileMenuItem}
                     onClick={ () => setMenuOpen(false) }
-                  >{ text }</Link>
+                  >{ text }</MuiLink>
                 ))
               }
             </Drawer>
             <IconButton
-              className={ classes.menuToggler }
+              sx={ styles.menuToggler }
               size="large"
               onClick={ handleClickToggler }
             >
@@ -218,14 +217,14 @@ const Header = ({ siteTitle }) => {
       }
       {
         !compact && (
-            <nav className={classes.navBar}>
+            <Box component='nav' sx={styles.navBar}>
               <Button
                 id="basic-button"
                 aria-controls="basic-menu"
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
-                className={classes.dropDownButton}
+                sx={styles.dropDownButton}
               >
                 About Us <KeyboardArrowDownIcon fontSize="small" />
               </Button>
@@ -248,29 +247,31 @@ const Header = ({ siteTitle }) => {
               >
                 {
                   aboutUs.map(({ path, text }) => (
-                      <MenuItem onclick={handleClose} key={ `main-menu-${ text }` }>
-                          <Link
+                      <MenuItem onClick={handleClose} key={ `main-menu-${ text }` }>
+                          <MuiLink
+                          component={GatsbyLink}
                           to={ path }
                           key={ `main-menu-${ text }` }
-                          className={classes.menuItem}
-                          >{ text }</Link>
+                          sx={styles.menuItem}
+                          >{ text }</MuiLink>
                       </MenuItem>
                   ))
                 }
               </Popover>
               {
                 mainMenuLinks.map(({ path, text }) => (
-                  <Link
+                  <MuiLink
+                    component={GatsbyLink}
                     to={ path }
                     key={ `main-menu-${ text }` }
-                    className={classes.menuItem}
-                  >{ text }</Link>
+                    sx={styles.menuItem}
+                  >{ text }</MuiLink>
                 ))
               }
-            </nav>
+            </Box>
         )
       } 
-    </header>
+    </Box>
   )
 }
 

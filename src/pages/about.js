@@ -1,50 +1,43 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Seo from "../components/layout/seo"
-import { Container, Box, Typography } from '@material-ui/core/'
+import { Container, Box, Typography } from '@mui/material'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
-import { makeStyles } from '@material-ui/core/styles'
-
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    '& h1': {
-
-    },
-    '& h2': {
-      paddingTop: '1.1rem',
-      color: 'grey',
-    },
-  }, 
-  titleColumn: {
-    flexGrow: '2',
-    padding: '20px',
-  },
-  textColumn: {
-    flexGrow: '3',
-    padding: '20px',
-
-    // border: '5px dashed blue'
-  },
-  infoBox: {
-    width: '100%',
-    textAlign: 'center',
-    '& a': {
-      textDecoration: 'none',
-      color: '#DC143C',
-    },
-    '& h3': {
-      fontWeight: '500',
-      fontSize: '26px',
-      paddingTop: '10px',
-      paddingBottom: '20px',
-    }
-  },
-}))
+import { useTheme } from '@mui/material/styles'
 
 const AboutPage = () => {
-  const classes = useStyles()
+  const theme = useTheme()
+  const styles = {
+    container: {
+      display: 'flex',
+      flexDirection: 'row',
+      '& h2': {
+        paddingTop: '1.1rem',
+        color: 'grey',
+      },
+    }, 
+    titleColumn: {
+      flexGrow: '2',
+      padding: '20px',
+    },
+    textColumn: {
+      flexGrow: '3',
+      padding: '20px',
+      },
+    infoBox: {
+      width: '100%',
+      textAlign: 'center',
+      '& a': {
+        textDecoration: 'none',
+        color: theme.palette.text.secondary,
+      },
+      '& h3': {
+        paddingTop: '10px',
+        paddingBottom: '20px',
+      }
+    },
+  }
+  
   const breadcrumbs = [
     { text: 'Home', path: '/' },
     { text: 'About NeuroBridge', path: '/about' },
@@ -55,8 +48,8 @@ const AboutPage = () => {
       <Seo title="About NeuroBridge" />
       <BreadcrumbNav crumbs={breadcrumbs} />
       <Container maxWidth='lg'>
-        <Box className={classes.container}>
-          <Box className={classes.titleColumn}>
+        <Box sx={styles.container}>
+          <Box sx={styles.titleColumn}>
             <Typography variant='h1'>
               What is NeuroBridge?
             </Typography>
@@ -65,7 +58,7 @@ const AboutPage = () => {
                 of clinical neuroscience and neuroimaging data.
             </Typography>
           </Box>
-          <Box className={classes.textColumn}>
+          <Box sx={styles.textColumn}>
             <Typography paragraph>
               Replication, mega analysis, and meta-analysis are critical to the advancement of 
                 neuroimaging research. However, these are costly and time-consuming processes, 
@@ -95,7 +88,7 @@ const AboutPage = () => {
             </Typography>
           </Box>
         </Box>
-        <Box className={classes.infoBox}>
+        <Box sx={styles.infoBox}>
           <Link to='/team'>
             <Typography variant='h3'>Click to learn more about our team</Typography>
           </Link>

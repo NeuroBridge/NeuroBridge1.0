@@ -1,59 +1,60 @@
 import React from "react"
-import { Link } from 'gatsby'
-import { makeStyles }  from '@material-ui/core/styles'
-import { Typography }  from '@material-ui/core/'
-import { Breadcrumbs } from '@material-ui/core/'
+import { Link as GatsbyLink } from 'gatsby'
+import { Box, Link as MuiLink, Typography, Breadcrumbs }  from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
-const useStyles = makeStyles(theme => ({
+function handleClick(event) {
+  event.preventDefault();
+  console.info('You clicked a breadcrumb.');
+}
+
+const BreadcrumbNav = ({ crumbs, title }) => {
+  const theme = useTheme()
+
+  const styles = {
     root: {
       margin: '16px 0px 26px',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: '#F8F9FA',
+      backgroundColor: theme.palette.grey.A100,
       padding: '10px 40px 5px',
     },
-    heading: {
-      margin: '15px 0px 0px 10px',
-      fontSize: '1.5rem',
-      fontWeight: '400',
-    },
     pathLink: {
-      color: ['#D9232D'],
-      textDecoration: ['none', '!important'],
-
+      color: theme.palette.text.secondary, //red
+      textDecoration: 'none',
     },
     finalCrumb: {
-      color: '#556270',
+      color: theme.palette.text.primary, //grey
     },
-    crumbTitle: {
-      fontSize: ['28px', '!important']
-    }
-}))
-function handleClick(event) {
-    event.preventDefault();
-    console.info('You clicked a breadcrumb.');
-  }
-  
+}
 
-const BreadcrumbNav = ({ crumbs, title }) => {
-    const classes = useStyles()
-    return (
+  return (
       <>
-        <div role="presentation" onClick={handleClick} className={classes.root}>
-          <Typography variant='h3' className={classes.crumbTitle}>{title}</Typography>
-          <Breadcrumbs aria-label="breadcrumb" className={classes.container}>
+        <Box role="presentation" onClick={handleClick} sx={styles.root}>
+          <Typography variant='h2'>{title}</Typography>
+          <Breadcrumbs aria-label="breadcrumb" sx={styles.container}>
           {
             crumbs.map(({ text, path }, i) => {
               if (i + 1 === crumbs.length) {
-                return <Typography key={ path } className={classes.finalCrumb}>{ text }</Typography>
+                return <Typography key={ path } sx={styles.finalCrumb}>{ text }</Typography>
               }
-              return <Typography key={ path }><Link to={ path } className={classes.pathLink}>{ text }</Link></Typography>
+              return (
+                <Typography key={ path }>
+                  <MuiLink 
+                    component={GatsbyLink}
+                    to={ path } 
+                    sx={styles.pathLink}
+                  >
+                    { text }
+                  </MuiLink>
+                </Typography>
+              )
             })
           }
           </Breadcrumbs>
 
-        </div>
+        </Box>
       </>
     )
 }

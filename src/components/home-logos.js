@@ -1,13 +1,14 @@
 import * as React from "react"
+/* eslint-disable no-unused-vars */
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { makeStyles }  from '@material-ui/core/styles'
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'
 import UNCCH from '../images/clients/UNC.png'
 import WashingtonUSL from '../images/clients/WUSTL_Medicine.png'
 import georgiaState from '../images/clients/GSU.png'
 import caseWestern from '../images/clients/CWRU.jpeg'
+import { Box } from "@mui/material"
 
 const clients= [
     {
@@ -42,11 +43,14 @@ const clients= [
     },
 ]
   
-const useStyles = makeStyles({
+
+const HomeLogos = () => {
+  const styles = {
     clients: {
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
+        flexWrap: 'wrap',
     },
     image: {
         padding: '20px',
@@ -60,22 +64,21 @@ const useStyles = makeStyles({
         }
     }
 
-})
+}
 
-const HomeFooter = () => {
-  const classes = useStyles()
     return (
-      <div className={classes.clients}>
+      <Box sx={styles.clients}>
             {clients.map((client)=> (
-                <Link href={client.link}>
-                    <img
+                <GatsbyLink href={client.link} target='_blank' key={client.name}>
+                    <Box
+                        component='img'
                         src={client.image}
                         alt={client.name}
-                        className={classes.image}
+                        sx={styles.image}
                     />  
-                </Link>
+                </GatsbyLink>
             ))}
-      </div>
+      </Box>
     )
 }
-export default HomeFooter
+export default HomeLogos

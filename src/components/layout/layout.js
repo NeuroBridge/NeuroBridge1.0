@@ -1,22 +1,20 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
-import "./layout.css"
 import Footer from "./footer"
-import { makeStyles } from "@material-ui/core/styles"
+import "./layout.css"
+import { Box } from '@mui/material'
 
-const useStyles = makeStyles({
-  root: {
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  
-})
 const Layout = ({ children }) => {
-  const classes = useStyles()
+  const styles = {
+    root: {
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+  }
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,9 +26,9 @@ const Layout = ({ children }) => {
   `)
   
   return (
-    <div className={classes.root}>
+    <Box sx={styles.root}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <div
+        <Box
           style={{
             margin: `0`,
             width: `100%`,
@@ -39,9 +37,9 @@ const Layout = ({ children }) => {
           }}
         >
           <main>{children}</main>
-        </div>
+        </Box>
       <Footer/>
-    </div>
+    </Box>
   )
 }
 

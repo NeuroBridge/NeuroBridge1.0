@@ -1,50 +1,53 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Seo from "../components/layout/seo"
-import { makeStyles } from '@material-ui/core/styles'
-import { Container, Typography } from '@material-ui/core/'
 import featureImg from '../images/features-5.png'
 import { useWebinars } from '../hooks'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
-
-
-const useStyles = makeStyles(theme => ({
-  sectionTitle: {
-    // '&::after': {
-    //     content: "--",
-    //     width: '120px',
-    //     height: '5px',
-    //     display: 'inline-block',
-    //     backgroundColor: '#e6636a',
-    //     margin: '4px 10px',
-    //     }, 
-      },
-  container: {
-    display: 'flex',
-  },
-  publicationType: {
-    padding: '10px',
-    width: '25%',
-    '& h2': {
-      // fontSize: '14pt',
-    }
-  },
-  publicationList: {
-    padding: '10px',
-    width: '50%',
-
-  },
-  publicationItem: {
-
-  },
-  featureImage: {
-    width: '45%',
-  }
-}))
+import { Container, Typography, Box } from '@mui/material'
 
 const PublicationPage = () => {
-  const classes = useStyles()
   const webinars = useWebinars()
+  const styles = {
+    sectionTitle: {
+        },
+    container: {
+      display: 'flex',
+      paddingTop: '30px',
+    },
+    publicationType: {
+      paddingRight: '20px',
+      width: '25%',
+      display: 'flex',
+      justifyContent: 'space-between',
+      '&:after': {
+        content: '""',
+        background: 'red',
+        height: '35px',
+        width: '3px',
+    }
+
+    },
+    publicationList: {
+      width: '50%',
+      '& h2': {
+        paddingBottom: '15px',
+      },
+      '& h3': {
+        paddingBottom: '10px',
+        fontStyle: 'italic',
+        color: 'grey',
+      },
+
+    },
+    publicationItem: {
+      padding: '10px',
+    },
+    featureImage: {
+      height: '200px',
+    }
+  }
+  
   const breadcrumbs = [
     { text: 'Home', path: '/' },
     { text: 'Publications', path: '/publication' },
@@ -53,28 +56,33 @@ const PublicationPage = () => {
   return (
     <>
       <Seo title="Publications" />
-      <BreadcrumbNav crumbs={breadcrumbs} />
+      <BreadcrumbNav crumbs={breadcrumbs} title='Publications'/>
       <Container>
-        <Typography paragraph className={classes.sectionTitle}>Publications</Typography>
         <Typography variant='h1'>Neurobridge Publications</Typography>
-        <div className={classes.container}>
-          <div className={classes.publicationType}>
+        <Box sx={styles.container}>
+          <Box sx={styles.publicationType}>
             <Typography variant='h2'>Webinars/Seminars</Typography>
-          </div>
-          <ul className={classes.publicationList}>
+          </Box>
+          <Box sx={styles.publicationList}>
             <Typography variant='h2'>Recent Webinars/Seminars</Typography>
             <Typography variant='h3'>List of Webinars/Seminars</Typography>
-            {webinars.map((item)=> (
-              <li key={item.title} className={classes.publicationItem}>
-                <Typography paragraph>{item.description}</Typography>
-                <Link to={item.slides}>Click here to access the slides</Link>
-              </li>
-            ))}
-          </ul>
-          <div>
-              <img src={featureImg} alt='' className={classes.featureImage}/>
-          </div>
-        </div>
+            <ul>
+              {webinars.map((item)=> (
+                <li key={item.title} sx={styles.publicationItem}>
+                  <Typography paragraph>{item.description}</Typography>
+                  <Link to={item.slides}>Click here to access the slides</Link>
+                </li>
+              ))}
+            </ul>
+          </Box>
+          <Box
+            component='img'
+            src={featureImg}
+            alt=''
+            sx={styles.featureImage}
+          >
+          </Box>
+        </Box>
       </Container>
     </>
   )
