@@ -1,4 +1,5 @@
 import * as React from "react"
+/* eslint-disable no-unused-vars */
 import { Link } from "gatsby"
 import Seo from '../components/layout/seo'
 import ohioState from '../images/clients/osu-wmc.png'
@@ -21,6 +22,7 @@ const participatingInstitutions = [
 ]
 
 const InstitutionsPage = () => {
+    /* eslint-disable no-unused-vars */
     const theme = useTheme()
     const styles = {
         container: {

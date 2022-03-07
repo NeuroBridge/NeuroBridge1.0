@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles"
 import { Box } from '@mui/material'
 
 const Layout = ({ children }) => {
+  /* eslint-disable no-unused-vars */
   const theme = useTheme()
 
   const styles = {

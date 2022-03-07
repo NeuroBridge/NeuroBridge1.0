@@ -1,4 +1,5 @@
 import * as React from "react"
+/* eslint-disable no-unused-vars */
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import ohioState from '../images/clients/osu-wmc.png'
@@ -45,6 +46,7 @@ const clients= [
   
 
 const HomeFooter = () => {
+/* eslint-disable no-unused-vars */
   const theme = useTheme()
   const styles = {
     clients: {

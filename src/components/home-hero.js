@@ -1,12 +1,14 @@
 import * as React from "react"
+/* eslint-disable no-unused-vars */
 import { Link } from 'gatsby'
-import { Slide, Typography, Button, ButtonUnstyled } from '@mui/material'
+import { Slide, Typography, Button } from '@mui/material'
 import welcomeNB from '../images/slide/PdG.jpeg'
 import { useTheme } from '@mui/material/styles'
 import { Box } from "@mui/material"
 
 
 const HomeHero = () => {
+/* eslint-disable no-unused-vars */
 const theme = useTheme()
 const styles = {
     hero: {
