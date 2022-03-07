@@ -4,13 +4,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
-import { useTheme } from "@mui/material/styles"
 import { Box } from '@mui/material'
 
 const Layout = ({ children }) => {
-  /* eslint-disable no-unused-vars */
-  const theme = useTheme()
-
   const styles = {
     root: {
       minHeight: '100vh',

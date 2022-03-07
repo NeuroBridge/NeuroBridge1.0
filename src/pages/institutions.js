@@ -1,5 +1,4 @@
 import * as React from "react"
-/* eslint-disable no-unused-vars */
 import { Link as GatsbyLink } from "gatsby"
 import Seo from '../components/layout/seo'
 import ohioState from '../images/clients/osu-wmc.png'
@@ -10,7 +9,6 @@ import georgiaState from '../images/clients/GSU.png'
 import caseWestern from '../images/clients/CWRU.jpeg'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
 import { Container, Typography, Box } from '@mui/material'
-import { useTheme } from '@mui/material/styles'
 
 const participatingInstitutions = [
     {
@@ -46,8 +44,6 @@ const participatingInstitutions = [
 ]
 
 const InstitutionsPage = () => {
-    /* eslint-disable no-unused-vars */
-    const theme = useTheme()
     const styles = {
         container: {
             '& h1': {

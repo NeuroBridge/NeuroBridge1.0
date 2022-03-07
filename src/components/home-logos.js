@@ -8,7 +8,6 @@ import UNCCH from '../images/clients/UNC.png'
 import WashingtonUSL from '../images/clients/WUSTL_Medicine.png'
 import georgiaState from '../images/clients/GSU.png'
 import caseWestern from '../images/clients/CWRU.jpeg'
-import { useTheme } from '@mui/material/styles'
 import { Box } from "@mui/material"
 
 const clients= [
@@ -46,8 +45,6 @@ const clients= [
   
 
 const HomeLogos = () => {
-/* eslint-disable no-unused-vars */
-  const theme = useTheme()
   const styles = {
     clients: {
         display: 'flex',

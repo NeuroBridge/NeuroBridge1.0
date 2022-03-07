@@ -4,13 +4,10 @@ import Seo from "../components/layout/seo"
 import featureImg from '../images/features-5.png'
 import { useWebinars } from '../hooks'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
-import { useTheme } from '@mui/material/styles'
 import { Container, Typography, Box } from '@mui/material'
 
 const PublicationPage = () => {
   const webinars = useWebinars()
-/* eslint-disable no-unused-vars */
-  const theme = useTheme()
   const styles = {
     sectionTitle: {
         },

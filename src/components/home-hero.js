@@ -1,15 +1,10 @@
 import * as React from "react"
 /* eslint-disable no-unused-vars */
 import { Link } from 'gatsby'
-import { Slide, Typography, Button } from '@mui/material'
+import { Slide, Typography, Button, Box } from '@mui/material'
 import welcomeNB from '../images/slide/PdG.jpeg'
-import { useTheme } from '@mui/material/styles'
-import { Box } from "@mui/material"
-
 
 const HomeHero = () => {
-/* eslint-disable no-unused-vars */
-const theme = useTheme()
 const styles = {
     hero: {
         height: '600px', //make the hero image full screen, must adapt

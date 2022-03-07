@@ -5,7 +5,6 @@ import { useMediaQuery } from '@mui/material'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@mui/icons-material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Box, Link as MuiLink, Drawer, IconButton, Button, MenuItem, Popover, Typography } from "@mui/material"
-import { useTheme } from '@mui/material/styles'
 
 const mainMenuLinks = [
   { text: 'Resources',      path: '/software' },
@@ -24,8 +23,6 @@ const resources = [
 ]
 
 const Header = ({ siteTitle }) => {
-  /* eslint-disable no-unused-vars */
-  const theme = useTheme()
   const styles = {
     root: {
       position: 'fixed',

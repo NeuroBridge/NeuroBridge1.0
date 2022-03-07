@@ -3,7 +3,6 @@ import { Link as GatsbyLink } from 'gatsby'
 import Seo from '../components/layout/seo'
 import featureImg from '../images/features-1.png'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
-import { useTheme } from '@mui/material/styles'
 import { Box, Link as MuiLink, Container, Typography } from "@mui/material"
 
 const software = [
@@ -18,8 +17,6 @@ const software = [
 ]
 
 const SoftwarePage = () => {
-    /* eslint-disable no-unused-vars */
-    const theme = useTheme()
     const styles = {
         contentContainer: {
             display: 'flex',
