@@ -1,7 +1,7 @@
 import * as React from "react"
 /* eslint-disable no-unused-vars */
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'
 import UNCCH from '../images/clients/UNC.png'
@@ -45,7 +45,7 @@ const clients= [
 ]
   
 
-const HomeFooter = () => {
+const HomeLogos = () => {
 /* eslint-disable no-unused-vars */
   const theme = useTheme()
   const styles = {
@@ -53,6 +53,7 @@ const HomeFooter = () => {
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
+        flexWrap: 'wrap',
     },
     image: {
         padding: '20px',
@@ -71,16 +72,16 @@ const HomeFooter = () => {
     return (
       <Box sx={styles.clients}>
             {clients.map((client)=> (
-                <Link href={client.link}>
+                <GatsbyLink href={client.link} target='_blank' key={client.name}>
                     <Box
                         component='img'
                         src={client.image}
                         alt={client.name}
                         sx={styles.image}
                     />  
-                </Link>
+                </GatsbyLink>
             ))}
       </Box>
     )
 }
-export default HomeFooter
+export default HomeLogos
