@@ -66,7 +66,7 @@ const InstitutionsPage = () => {
             <Container sx={styles.container}>
                 <Typography variant='h1' sx={styles.title}>NeuroBridge</Typography>
                 <Typography variant='subtitle1'>NIH NIDA Award number: R01DA053028</Typography>
-                <div sx={styles.logoContainer}>
+                <Box sx={styles.logoContainer}>
                     { participatingInstitutions.map(( item ) => (
                         <Box
                             component='img'
@@ -76,7 +76,7 @@ const InstitutionsPage = () => {
                             sx={styles.logo}
                         />
                     ))}
-                </div>
+                </Box>
             </Container>
         </>
     )
