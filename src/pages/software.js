@@ -18,36 +18,60 @@ const software = [
 ]
 
 const SoftwarePage = () => {
+    /* eslint-disable no-unused-vars */
     const theme = useTheme()
     const styles = {
-        container: {
+        contentContainer: {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'space-between',
-    
-        },
-        sectionTitle: {
-            
+            paddingTop: '30px',
         },
         resourceContainer: {
             display: 'flex',
             paddingBottom: '30px',
         },
-        resourceList: {
-            width: '30%',
-            borderRight: 'solid',
-            borderWidth: '1px',
-            borderColor: 'red',
-        },
-        resourceLinkLeft: {
+        resourceName: {
+            width: '25%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginRight: '40px',
+            '& a': {
+                textDecoration: 'none',
+                color: theme.palette.text.secondary,
+                fontWeight: '600',
+                fontSize: '1.2rem',
+            },
+            '&:after': {
+                content: '""',
+                background: 'red',
+                height: '35px',
+                width: '3px',
+            }
         },
         resourceContent: {
-            padding: '20px',
             display: 'flex',
+        },
+        resourceDescription: {
+            '& h2': {
+                paddingBottom: '15px',
+            },
+            '& h3': {
+                paddingBottom: '10px',
+                fontStyle: 'italic',
+                color: 'grey',
+            },
+            '& a': {
+                textDecoration: 'none',
+                color: theme.palette.text.secondary,
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                letterSpacing: '0.7px',
+            }
         },
         image: {
             padding: '20px',
-            maxWidth: '250px',
+            height: '250px',
         },
     }
 
@@ -60,17 +84,16 @@ const SoftwarePage = () => {
         <>
             <Seo title="NeuroBridge Resources" />
             <BreadcrumbNav crumbs={breadcrumbs} title='Resources'/>
-            <Container>
-                {/* <Typography paragraph sx={styles.sectionTitle}>Software</Typography> */}
+            <Container >
                 <Typography variant='h1'>Our Latest Updated Software</Typography>
-                <Box sx={styles.container}>
+                <Box sx={styles.contentContainer}>
                     {software.map((item) => (
                         <Box key={item.name} sx={styles.resourceContainer}>
-                            <Box sx={styles.resourceList}>
+                            <Box sx={styles.resourceName}>
                                 <MuiLink component={GatsbyLink} to={item.resourceLink} sx={styles.resourceLinkLeft}>Github</MuiLink>
                             </Box>
                             <Box sx={styles.resourceContent}>
-                                <Box>
+                                <Box sx={styles.resourceDescription}>
                                     <Typography variant='h2'>{item.title}</Typography>
                                     <Typography variant='h3'>{item.subheading}</Typography>
                                     <Typography paragraph>{item.text}</Typography>

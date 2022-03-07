@@ -9,28 +9,45 @@ import { Container, Typography, Box } from '@mui/material'
 
 const PublicationPage = () => {
   const webinars = useWebinars()
-
+/* eslint-disable no-unused-vars */
   const theme = useTheme()
   const styles = {
     sectionTitle: {
         },
     container: {
       display: 'flex',
+      paddingTop: '30px',
     },
     publicationType: {
-      padding: '10px',
+      paddingRight: '20px',
       width: '25%',
+      display: 'flex',
+      justifyContent: 'space-between',
+      '&:after': {
+        content: '""',
+        background: 'red',
+        height: '35px',
+        width: '3px',
+    }
+
     },
     publicationList: {
-      padding: '10px',
       width: '50%',
-  
+      '& h2': {
+        paddingBottom: '15px',
+      },
+      '& h3': {
+        paddingBottom: '10px',
+        fontStyle: 'italic',
+        color: 'grey',
+      },
+
     },
     publicationItem: {
-  
+      padding: '10px',
     },
     featureImage: {
-      width: '45%',
+      height: '200px',
     }
   }
   
@@ -44,22 +61,23 @@ const PublicationPage = () => {
       <Seo title="Publications" />
       <BreadcrumbNav crumbs={breadcrumbs} title='Publications'/>
       <Container>
-        {/* <Typography paragraph sx={styles.sectionTitle}>Publications</Typography> */}
         <Typography variant='h1'>Neurobridge Publications</Typography>
         <Box sx={styles.container}>
           <Box sx={styles.publicationType}>
             <Typography variant='h2'>Webinars/Seminars</Typography>
           </Box>
-          <ul sx={styles.publicationList}>
+          <Box sx={styles.publicationList}>
             <Typography variant='h2'>Recent Webinars/Seminars</Typography>
             <Typography variant='h3'>List of Webinars/Seminars</Typography>
-            {webinars.map((item)=> (
-              <li key={item.title} sx={styles.publicationItem}>
-                <Typography paragraph>{item.description}</Typography>
-                <Link to={item.slides}>Click here to access the slides</Link>
-              </li>
-            ))}
-          </ul>
+            <ul>
+              {webinars.map((item)=> (
+                <li key={item.title} sx={styles.publicationItem}>
+                  <Typography paragraph>{item.description}</Typography>
+                  <Link to={item.slides}>Click here to access the slides</Link>
+                </li>
+              ))}
+            </ul>
+          </Box>
           <Box
             component='img'
             src={featureImg}
