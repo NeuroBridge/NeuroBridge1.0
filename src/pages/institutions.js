@@ -1,6 +1,6 @@
 import * as React from "react"
 /* eslint-disable no-unused-vars */
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 import Seo from '../components/layout/seo'
 import ohioState from '../images/clients/osu-wmc.png'
 import USC from '../images/clients/usc-ISI.png'
@@ -13,12 +13,36 @@ import { Container, Typography, Box } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 
 const participatingInstitutions = [
-    { name: 'Ohio State University',      logo: ohioState },
-    { name: 'University of Southern California',      logo: USC },
-    { name: 'University of North Carolina at Chapel Hill',      logo: UNCCH },
-    { name: 'Washington University at Saint Louis',      logo: WashingtonUSL },
-    { name: 'Georgia State University',      logo: georgiaState },
-    { name: 'Case Western University',      logo: caseWestern },
+    {
+      name: 'The Ohio State University Wexner Medical Center',
+      link: 'https://medicine.osu.edu/find-faculty/clinical/psychiatry-and-behavioral-health/lei-wang-phd',
+      image: ohioState
+    },
+    {
+      name: 'University of Southern California Information Sciences Institute',
+      link: 'https://www.isi.edu/',
+      image: USC
+    },
+    {
+      name: 'University of North Carolina at Chapel Hill',
+      link: 'https://www.unc.edu',
+      image: UNCCH
+    },
+    {
+      name: 'Washington University in St. Louis School of Medicine',
+      link: 'https://medicine.wustl.edu/',
+      image: WashingtonUSL
+    },
+    {
+      name: 'Georgia State University',
+      link: 'https://research.gsu.edu/georgia-state-university-research-centers-and-institutes/',
+      image: georgiaState
+    },
+    {
+      name: 'Case Western Reserve University',
+      link: 'https://case.edu/cwruresearch/',
+      image: caseWestern
+    },
 ]
 
 const InstitutionsPage = () => {
@@ -68,13 +92,14 @@ const InstitutionsPage = () => {
                 <Typography variant='subtitle1'>NIH NIDA Award number: R01DA053028</Typography>
                 <Box sx={styles.logoContainer}>
                     { participatingInstitutions.map(( item ) => (
-                        <Box
-                            component='img'
-                            key={item.name}
-                            src={item.logo}
-                            alt={item.name}
-                            sx={styles.logo}
-                        />
+                        <GatsbyLink href={item.link} key={item.name} target='_blank'>
+                            <Box
+                                component='img'
+                                src={item.image}
+                                alt={item.name}
+                                sx={styles.logo}
+                            />
+                        </GatsbyLink>
                     ))}
                 </Box>
             </Container>
