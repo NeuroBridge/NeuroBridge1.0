@@ -18,7 +18,7 @@ const InstitutionList = () => {
   }
 
   return (
-    <Box>
+    <React.Fragment>
       {institutions.map(( item ) => {
         const logo = getImage(item.image)
         return (
@@ -32,7 +32,7 @@ const InstitutionList = () => {
           </GatsbyLink>
         )
       })}
-    </Box>
+    </React.Fragment>
   )
 }
 export default InstitutionList

@@ -12,11 +12,9 @@ const InstitutionsPage = () => {
             },
         },
         logoContainer: {
-            '& div:first-child': {
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-            },
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
             '& img': {
                 padding: '30px',
             },

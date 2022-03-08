@@ -7,17 +7,14 @@ import { Box } from "@mui/material"
 const IndexPage = () => {
   const styles = {
     logoContainer: {
-      '& div:first-child': {
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-      },
+      display: 'flex',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      flexWrap: 'wrap',
       '& img': {
         width: '180px',
         padding: '20px',
       },
-
     }
   }
   return (
