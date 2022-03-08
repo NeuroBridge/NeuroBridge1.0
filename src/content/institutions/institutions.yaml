@@ -1,0 +1,24 @@
+    
+- name: The Ohio State University Wexner Medical Center
+  link: https://medicine.osu.edu/find-faculty/clinical/psychiatry-and-behavioral-health/lei-wang-phd
+  image: ./osu-wmc.png
+
+- name: University of Southern California Information Sciences Institute
+  link: https://www.isi.edu/
+  image: ./usc-ISI.png
+
+- name: University of North Carolina at Chapel Hill
+  link: https://www.unc.edu
+  image: ./UNC.png
+
+- name: Washington University in St. Louis School of Medicine
+  link: https://medicine.wustl.edu/
+  image: ./WUSTL_Medicine.png
+
+- name: Georgia State University
+  link: https://research.gsu.edu/georgia-state-university-research-centers-and-institutes/
+  image: ./GSU.png
+
+- name: Case Western Reserve University
+  link: https://case.edu/cwruresearch/
+  image: ./CWRU.jpeg

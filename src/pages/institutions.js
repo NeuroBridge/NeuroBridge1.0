@@ -18,8 +18,7 @@ const InstitutionsPage = () => {
                 justifyContent: 'center',
             },
             '& img': {
-                height: '150px',
-                padding: '20px',
+                padding: '30px',
             },
         }, 
     }
