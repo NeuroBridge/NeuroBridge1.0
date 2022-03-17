@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link as GatsbyLink } from "gatsby"
+import { Link } from './link'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Box } from '@mui/material'
 import { useInstitutions } from '../hooks'
@@ -22,14 +22,14 @@ const InstitutionList = () => {
       {institutions.map(( item ) => {
         const logo = getImage(item.image)
         return (
-          <GatsbyLink href={item.link} key={item.name} target='_blank'>
+          <Link to={item.link} key={item.name}>
             <Box sx={styles.logo}>
               <GatsbyImage
                 image={logo}
                 alt={item.name}
               />
             </Box>
-          </GatsbyLink>
+          </Link>
         )
       })}
     </React.Fragment>

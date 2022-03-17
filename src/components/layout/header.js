@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react"
 import PropTypes from "prop-types"
-import { Link as GatsbyLink } from 'gatsby'
+import { Link } from '../link'
 import { useMediaQuery } from '@mui/material'
 import { Menu as MenuIcon, Close as CloseMenuIcon } from '@mui/icons-material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -151,7 +151,7 @@ const Header = ({ siteTitle }) => {
 
     <Box component="header" sx={styles.root}>
       <MuiLink 
-        component={GatsbyLink}
+        component={Link}
         to='/'
         sx={styles.brand}
       >
@@ -162,7 +162,7 @@ const Header = ({ siteTitle }) => {
           <Fragment>
             <Drawer open={ menuOpen } onClose={ () => setMenuOpen(false) } sx={styles.mobileMenuPaper}>
               <MuiLink
-                component={GatsbyLink}
+                component={Link}
                 to="/" 
                 sx={ styles.brand } 
                 style={{ margin: '1rem auto' }}
@@ -170,7 +170,7 @@ const Header = ({ siteTitle }) => {
                 <Typography variant='h1' sx={styles.logo}>NeuroBridge</Typography>
               </MuiLink>
               <MuiLink
-                component={GatsbyLink}
+                component={Link}
                 to="/"
                 key={ `mobile-main-menu-home` }
                 sx={styles.mobileMenuItem}
@@ -179,7 +179,7 @@ const Header = ({ siteTitle }) => {
               {
                 aboutUs.map(({ path, text }) => (
                     <MuiLink
-                      component={GatsbyLink}
+                      component={Link}
                       to={ path }
                       key={ `main-menu-${ text }` }
                       sx={styles.mobileMenuSubItem}
@@ -192,7 +192,7 @@ const Header = ({ siteTitle }) => {
               {
                 mainMenuLinks.map(({ path, text }) => (
                   <MuiLink
-                    component={GatsbyLink}
+                    component={Link}
                     to={ path }
                     key={ `mobile-main-menu-${ text }` }
                     sx={styles.mobileMenuItem}
@@ -249,7 +249,7 @@ const Header = ({ siteTitle }) => {
                   aboutUs.map(({ path, text }) => (
                       <MenuItem onClick={handleClose} key={ `main-menu-${ text }` }>
                           <MuiLink
-                          component={GatsbyLink}
+                          component={Link}
                           to={ path }
                           key={ `main-menu-${ text }` }
                           sx={styles.menuItem}
@@ -261,7 +261,7 @@ const Header = ({ siteTitle }) => {
               {
                 mainMenuLinks.map(({ path, text }) => (
                   <MuiLink
-                    component={GatsbyLink}
+                    component={Link}
                     to={ path }
                     key={ `main-menu-${ text }` }
                     sx={styles.menuItem}
