@@ -1,6 +1,6 @@
 import * as React from "react"
 /* eslint-disable no-unused-vars */
-import { Link } from 'gatsby'
+import { Link } from './link'
 import { Slide, Typography, Button, Box } from '@mui/material'
 import welcomeNB from '../images/slide/PdG.jpeg'
 

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link as GatsbyLink } from 'gatsby'
+import { Link } from '../link'
 import { Box, Link as MuiLink, Typography, Breadcrumbs }  from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 
@@ -42,7 +42,7 @@ const BreadcrumbNav = ({ crumbs, title }) => {
               return (
                 <Typography key={ path }>
                   <MuiLink 
-                    component={GatsbyLink}
+                    component={Link}
                     to={ path } 
                     sx={styles.pathLink}
                   >

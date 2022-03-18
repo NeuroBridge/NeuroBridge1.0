@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link as GatsbyLink } from 'gatsby'
+import { Link } from '../components/link'
 import Seo from '../components/layout/seo'
 import featureImg from '../images/features-1.png'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
@@ -89,14 +89,14 @@ const SoftwarePage = () => {
                     {software.map((item) => (
                         <Box key={item.name} sx={styles.resourceContainer}>
                             <Box sx={styles.resourceName}>
-                                <MuiLink component={GatsbyLink} to={item.resourceLink} sx={styles.resourceLinkLeft}>Github</MuiLink>
+                                <MuiLink component={Link} to={item.resourceLink} sx={styles.resourceLinkLeft}>Github</MuiLink>
                             </Box>
                             <Box sx={styles.resourceContent}>
                                 <Box sx={styles.resourceDescription}>
                                     <Typography variant='h2'>{item.title}</Typography>
                                     <Typography variant='h3'>{item.subheading}</Typography>
                                     <Typography paragraph>{item.text}</Typography>
-                                    <MuiLink component={GatsbyLink} to={item.resourceLink}>Github</MuiLink>
+                                    <MuiLink component={Link} to={item.resourceLink}>Github</MuiLink>
                                 </Box>
                                 <Box
                                     component='img'

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link } from '../components/link'
 import Seo from "../components/layout/seo"
 import { Container, Box, Typography } from '@mui/material'
 import BreadcrumbNav from '../components/layout/breadcrumbs'

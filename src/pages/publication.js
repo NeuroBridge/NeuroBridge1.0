@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link } from '../components/link'
 import Seo from "../components/layout/seo"
 import featureImg from '../images/features-5.png'
 import { useWebinars } from '../hooks'
