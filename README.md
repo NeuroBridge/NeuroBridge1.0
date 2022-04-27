@@ -10,10 +10,10 @@ This website is intended to give information and access to the Neurobridge Porta
 ## Installation
 
 - To run this website locally, clone the repo and install the dependencies (`npm i`)
-- The content for this website is hosted inside this repository under the content folder in yaml format.
-- To spin up the application, run  `npm start` which runs gatsby develop and will allow you to access the site on localhost:8000
-- You will also be able to access the data coming through from contentful by checking out localhost:8000/_graphql
-- To check the build, run `npm build` which will run gatsby build and build the site. To see the site, run `gatsby serve`, and you should be able to see the site on localhost:9000
+- Spin up the development server on `localhost:8000` by running `npm start`.
+- You will also be able to access the data coming through from contentful by navigating to `localhost:8000/__graphql` in your browser.
+- When proposing changes, always verify the build process runs without error locally with `npm run build`. Serve the built application on port `localhost:9000` with `gatsby serve`.
+
 ## Development
 
 There are three notable branches for this project.
@@ -23,12 +23,12 @@ There are three notable branches for this project.
 
 ## Content Management
 
-This site uses yaml files to store larger pieces of content for:
-- team members
-- participating institutions
-- webinars
+The content for this website is hosted inside the `content` folder in yaml format. This site uses yaml files to store larger pieces of content for:
+- team members (`src/content/team/team.yaml`)
+- participating institutions (`src/content/institutions/institutions.yaml`)
+- webinars (`src/content/team/team.yaml`)
 
-The yaml files are then queried using graphql using the `gatsby-transformer-yaml` gatsby plug-in. The hooks folder contains custom hooks that convert each of the graphql queries to an array of objects.
+The yaml files are then queried with graphql and transformed via the functions defined in the `src/hooks` directory.
 ## Branding
 
 - Fonts: Libre Franklin
