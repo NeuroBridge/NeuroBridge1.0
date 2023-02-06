@@ -8,7 +8,8 @@ import { Container, Typography, Box } from '@mui/material'
 
 const PublicationPage = () => {
   const webinars = usePublications()[0]
-  const publications= usePublications()[1]
+  const papers= usePublications()[1]
+  
   const styles = {
     sectionTitle: {
         },
@@ -66,7 +67,7 @@ const PublicationPage = () => {
           </Box>
           <Box sx={styles.publicationList}>
             <ul>
-              {publications.map((item)=> (
+              {papers.map((item)=> (
                 <li key={item.title} sx={styles.publicationItem}>
                   <Typography paragraph>{item.citation}</Typography>
                   <Link to={item.link}>Click here to read more</Link>
