@@ -69,7 +69,7 @@ const PublicationPage = () => {
               {publications.map((item)=> (
                 <li key={item.title} sx={styles.publicationItem}>
                   <Typography paragraph>{item.citation}</Typography>
-                  <Link to={item.link}>Click here to access the slides</Link>
+                  <Link to={item.link}>Click here to read more</Link>
                 </li>
               ))}
             </ul>
