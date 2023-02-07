@@ -10,6 +10,7 @@ import { useTheme } from '@mui/material/styles'
 const mainMenuLinks = [
   { text: 'Resources',      path: '/software' },
   { text: 'Publications',   path: '/publication' },
+
 ]
 const aboutUs = [
     { text: 'What is NeuroBridge?',         path: '/about' },
@@ -268,6 +269,11 @@ const Header = ({ siteTitle }) => {
                   >{ text }</MuiLink>
                 ))
               }
+              <Link to='https://neurobridges-portal-staging.netlify.app/' style={{textDecoration: 'none'}}>
+                <Button variant="contained">
+                  Neurobridge Portal
+                </Button>
+              </Link>
             </Box>
         )
       } 
