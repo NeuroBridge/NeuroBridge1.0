@@ -32,7 +32,7 @@ const BreadcrumbNav = ({ crumbs, title }) => {
   return (
       <>
         <Box role="presentation" onClick={handleClick} sx={styles.root}>
-          <Typography variant='h2'>{title}</Typography>
+          {/* <Typography variant='h2'>{title}</Typography> */}
           <Breadcrumbs aria-label="breadcrumb" sx={styles.container}>
           {
             crumbs.map(({ text, path }, i) => {
