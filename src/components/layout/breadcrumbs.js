@@ -15,7 +15,7 @@ const BreadcrumbNav = ({ crumbs, title }) => {
     root: {
       margin: '16px 0px 26px',
       display: 'flex',
-      justifyContent: 'space-between',
+      justifyContent: 'flex-end',
       alignItems: 'center',
       backgroundColor: theme.palette.grey.A100,
       padding: '10px 40px 5px',
@@ -32,7 +32,6 @@ const BreadcrumbNav = ({ crumbs, title }) => {
   return (
       <>
         <Box role="presentation" onClick={handleClick} sx={styles.root}>
-          {/* <Typography variant='h2'>{title}</Typography> */}
           <Breadcrumbs aria-label="breadcrumb" sx={styles.container}>
           {
             crumbs.map(({ text, path }, i) => {
