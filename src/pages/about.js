@@ -1,24 +1,20 @@
 import * as React from "react"
 import { Link } from '../components/link'
 import Seo from "../components/layout/seo"
-import { Container, Box, Typography } from '@mui/material'
+import { Container, Box, Typography, Stack } from '@mui/material'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
 import { useTheme } from '@mui/material/styles'
 
 const AboutPage = () => {
   const theme = useTheme()
+
   const styles = {
     container: {
       display: 'flex',
-      flexDirection: 'row',
-      '& h2': {
-        paddingTop: '1.1rem',
-        color: 'grey',
-      },
+      padding: '1.5rem'
     }, 
-    column: {
-      padding: '20px',
-      flex: '1',
+    section: {
+      flex: '1'
     },
     infoBox: {
       width: '100%',
@@ -44,9 +40,13 @@ const AboutPage = () => {
       <Seo title="About NeuroBridge" />
       <BreadcrumbNav crumbs={breadcrumbs} />
       <Container maxWidth='lg'>
-        <Typography variant='h1'>About NeuroBridge</Typography>
-        <Box sx={styles.container}>
-          <Box sx={styles.column}>
+        <Typography variant='h1'>What is NeuroBridge?</Typography>
+        <Stack 
+          direction={{ sm: 'column', md: 'row' }}
+          spacing={{ sm: 1, md: 6 }}
+          sx={styles.container}
+        >
+          <Box sx={styles.section}>
             <Typography variant='h2'>
               About the overall project - Where we want to go?
             </Typography>
@@ -74,45 +74,45 @@ const AboutPage = () => {
                 ontology look-up service (OLS), and similarity searches.
             </Typography>
           </Box>
-          <Box sx={styles.column}>
-          <Typography variant='h2'>
-            About the prototype - Where we are
-          </Typography>
-          <Typography paragraph>
-            The prototype connects researchers with potential neuroimaging data by searching for papers 
-              describing neuroimaging studies that contain information on the neuroimaging data. Currently, 
-              356 PubMed Central publications are indexed and available to search with NeuroBridge. The 
-              available publications are those documenting studies of schizophrenia and substance abuse 
-              that contain information on neuroimaging data. The publications have been published between 
-              2017 - 2022. The NeuroBridge prototype is powered by the <Link to='https://github.com/NeuroBridge/neuro-ontologies/tree/main/neurobridge'>
-                NeuroBridge ontology</Link> and Natural Language Processing machine learning technologies.
-          </Typography>
-          <Typography variant='h3'>
-            Portal:
-          </Typography>
-          <Typography paragraph>
-            Users can use our <Link to='https://neurobridges-portal-staging.netlify.app/'>prototype portal</Link> to 
-              perform searches for papers describing neuroimaging studies on schizophrenia and addiction, by building 
-              a query composed of concepts included in the NeuroBridge ontology. 
-          </Typography>
-          <Typography paragraph>
-            In this prototype beta release, our current scope is for users to perform searches for 
-              papers describing neuroimaging studies on schizophrenia and addiction. 
-          </Typography>
-          <br/>
-          <Typography variant='h2'>
-            What we are working on - What’s next?
-          </Typography>
-          <Typography paragraph>
-          We are working on ways to facilitate follow-ups so that the researcher can potentially 
-          obtain the data through additional data sharing mechanisms.
-          </Typography>
-          <Typography paragraph>
-          We are also working on ways to present more information about the studies contained 
-          in the returned papers.
-          </Typography>
-        </Box>
-        </Box>
+          <Box sx={styles.section}>
+            <Typography variant='h2'>
+              About the prototype - Where we are
+            </Typography>
+            <Typography paragraph>
+              The prototype connects researchers with potential neuroimaging data by searching for papers 
+                describing neuroimaging studies that contain information on the neuroimaging data. Currently, 
+                356 PubMed Central publications are indexed and available to search with NeuroBridge. The 
+                available publications are those documenting studies of schizophrenia and substance abuse 
+                that contain information on neuroimaging data. The publications have been published between 
+                2017 - 2022. The NeuroBridge prototype is powered by the <Link to='https://github.com/NeuroBridge/neuro-ontologies/tree/main/neurobridge'>
+                  NeuroBridge ontology</Link> and Natural Language Processing machine learning technologies.
+            </Typography>
+            <Typography variant='h3'>
+              Portal:
+            </Typography>
+            <Typography paragraph>
+              Users can use our <Link to='https://neurobridges-portal-staging.netlify.app/'>prototype portal</Link> to 
+                perform searches for papers describing neuroimaging studies on schizophrenia and addiction, by building 
+                a query composed of concepts included in the NeuroBridge ontology. 
+            </Typography>
+            <Typography paragraph>
+              In this prototype beta release, our current scope is for users to perform searches for 
+                papers describing neuroimaging studies on schizophrenia and addiction. 
+            </Typography>
+            <br/>
+            <Typography variant='h2'>
+              What we are working on - What’s next?
+            </Typography>
+            <Typography paragraph>
+            We are working on ways to facilitate follow-ups so that the researcher can potentially 
+            obtain the data through additional data sharing mechanisms.
+            </Typography>
+            <Typography paragraph>
+            We are also working on ways to present more information about the studies contained 
+            in the returned papers.
+            </Typography>
+          </Box>
+        </Stack>
         <Box sx={styles.infoBox}>
           <Link to='/team'>
             <Typography variant='h3'>Click to learn more about our team</Typography>
