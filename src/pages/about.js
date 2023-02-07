@@ -42,8 +42,8 @@ const AboutPage = () => {
       <Container maxWidth='lg'>
         <Typography variant='h1'>What is NeuroBridge?</Typography>
         <Stack 
-          direction={{ sm: 'column', md: 'row' }}
-          spacing={{ sm: 1, md: 6 }}
+          direction={{ xs: 'column', md: 'row' }}
+          spacing={{ xs: 1, md: 6 }}
           sx={styles.container}
         >
           <Box sx={styles.section}>
