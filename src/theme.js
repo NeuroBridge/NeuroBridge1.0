@@ -22,7 +22,7 @@ export const theme = createTheme({
       fontSize: '2.25rem',
       fontWeight: '500',
       letterSpacing: '0.01rem',
-      // paddingBottom: '1rem'
+      paddingBottom: '1rem'
     },
     h2: {
       fontSize: '1.5rem',
