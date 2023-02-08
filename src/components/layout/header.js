@@ -182,7 +182,7 @@ const Header = ({ siteTitle }) => {
                     <MuiLink
                       component={Link}
                       to={ path }
-                      key={ `main-menu-${ text }` }
+                      key={ `mobile-main-menu-${ text }` }
                       sx={styles.mobileMenuSubItem}
                       onClick={ () => setMenuOpen(false) }
                     >
@@ -201,6 +201,14 @@ const Header = ({ siteTitle }) => {
                   >{ text }</MuiLink>
                 ))
               }
+              <MuiLink
+                component={Link}
+                href='https://neurobridges-portal-staging.netlify.app/'
+                sx={styles.mobileMenuItem}
+                onClick={ () => setMenuOpen(false) }
+              >
+                Neurobridge Portal
+              </MuiLink>
             </Drawer>
             <IconButton
               sx={ styles.menuToggler }
