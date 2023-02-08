@@ -67,7 +67,7 @@ const styles = {
                     <Typography paragraph>A platform for data discovery to enhance the reuse of clinical neuroscience/neuroimaging data. We develop the NeuroBridge ontology, and combine machine learning with ontology-based search of both neuroimaging repositories (e.g. XNAT databases) and open-access full text journals (such as PubMed Central).</Typography>
                 </Slide>
                 <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={3000}>
-                    <Button to='/about' sx={styles.button}>Read More</Button>
+                    <Button href='/about' sx={styles.button}>Read More</Button>
                 </Slide>
             </Box>
         </Box>
