@@ -10,6 +10,7 @@ import { useTheme } from '@mui/material/styles'
 const mainMenuLinks = [
   { text: 'Resources',      path: '/software' },
   { text: 'Publications',   path: '/publication' },
+
 ]
 const aboutUs = [
     { text: 'What is NeuroBridge?',         path: '/about' },
@@ -181,7 +182,7 @@ const Header = ({ siteTitle }) => {
                     <MuiLink
                       component={Link}
                       to={ path }
-                      key={ `main-menu-${ text }` }
+                      key={ `mobile-main-menu-${ text }` }
                       sx={styles.mobileMenuSubItem}
                       onClick={ () => setMenuOpen(false) }
                     >
@@ -200,6 +201,14 @@ const Header = ({ siteTitle }) => {
                   >{ text }</MuiLink>
                 ))
               }
+              <MuiLink
+                component={Link}
+                href='https://neurobridges-portal-staging.netlify.app/'
+                sx={styles.mobileMenuItem}
+                onClick={ () => setMenuOpen(false) }
+              >
+                Neurobridge Portal
+              </MuiLink>
             </Drawer>
             <IconButton
               sx={ styles.menuToggler }
@@ -268,6 +277,9 @@ const Header = ({ siteTitle }) => {
                   >{ text }</MuiLink>
                 ))
               }
+                <Button variant="contained" href='https://neurobridges-portal-staging.netlify.app/' color='secondary' sx={{textTransform: 'none'}}>
+                  Neurobridge Portal
+                </Button>
             </Box>
         )
       } 
