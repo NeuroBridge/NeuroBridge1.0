@@ -269,11 +269,9 @@ const Header = ({ siteTitle }) => {
                   >{ text }</MuiLink>
                 ))
               }
-              <Link to='https://neurobridges-portal-staging.netlify.app/' style={{textDecoration: 'none'}}>
-                <Button variant="contained">
+                <Button variant="contained" href='https://neurobridges-portal-staging.netlify.app/'>
                   Neurobridge Portal
                 </Button>
-              </Link>
             </Box>
         )
       } 
