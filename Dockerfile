@@ -23,5 +23,5 @@ RUN npm run build
 ########################
 FROM nginx:latest
 EXPOSE 80
-COPY --from=builder /src/dist /usr/share/nginx/html/
+COPY --from=builder /src/public /usr/share/nginx/html/
 CMD ["nginx", "-g", "daemon off;"]
