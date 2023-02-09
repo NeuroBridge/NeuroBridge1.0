@@ -4,6 +4,7 @@ const publicationsQuery = graphql`{
   webinars: allWebinarsYaml {
     nodes {
       title
+      date
       description
       slides
     }
