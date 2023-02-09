@@ -10,6 +10,24 @@ const PublicationPage = () => {
   const webinars = usePublications()[0]
   const papers= usePublications()[1]
   
+  const compact = useMediaQuery('(max-width: 1000px)');
+
+  const styles = {
+    section: {
+      display: 'flex'
+    },
+    sectionTitle: {
+      flex: 1,
+      minWidth: '200px',
+    },
+    sectionContent: {
+      flex: 4
+    },
+    publicationItem: {
+      paddingBottom: '2rem'
+    }
+  }
+  
   const oldStyles = {
     sectionTitle: {
         },
@@ -52,7 +70,6 @@ const PublicationPage = () => {
     }
   }
   
-  const compact = useMediaQuery('(max-width: 1000px)');
   const breadcrumbs = [
     { text: 'Home', path: '/' },
     { text: 'Publications', path: '/publication' },
@@ -68,52 +85,45 @@ const PublicationPage = () => {
         <Stack 
           direction={{ xs: 'column', md: 'row' }}
           spacing={{ xs: 1, md: 2 }}
+          sx={styles.section}
         >
-          <Box>
+          <Box sx={styles.sectionTitle}>
             <Typography variant='h2'>Published Papers</Typography>
           </Box>
-          <Box>
+          <Box sx={styles.sectionContent}>
             {
               papers.map((item)=> {
                 const splitDate = Date(item.date).split(' ')
                 const displayDate = `${splitDate[1]} ${splitDate[2]}, ${splitDate[3]}`
 
                 return (
-                  <Box key={item.title} >
+                  <Box key={item.title} sx={styles.publicationItem}>
                     <Typography variant='h3'>{item.title}</Typography>
-                    <Typography paragraph>{item.description}</Typography>
+                    <Typography paragraph>{item.citation}</Typography>
                     <Link to={item.link}>Read more</Link>
                   </Box>
                 )
               })
             }
           </Box>
-          {/* {
-            !compact && (
-              <Box
-                component='img'
-                src={featureImg}
-                alt=''
-              />  
-            )
-          } */}
         </Stack>
-        
+
         <Stack 
           direction={{ xs: 'column', md: 'row' }}
           spacing={{ xs: 1, md: 2 }}
+          sx={styles.section}
         >
-          <Box>
-            <Typography variant='h2'>Webinars/Seminars</Typography>
+          <Box sx={styles.sectionTitle}>
+            <Typography variant='h2'>Webinars & Seminars</Typography>
           </Box>
-          <Box >
+          <Box sx={styles.sectionContent}>
             {
               webinars.map((item)=> {
                 const splitDate = Date(item.date).split(' ')
                 const displayDate = `${splitDate[1]} ${splitDate[2]}, ${splitDate[3]}`
 
                 return (
-                  <Box key={item.title} >
+                  <Box key={item.title} sx={styles.publicationItem}>
                     <Typography variant='h3'>{item.title}</Typography>
                     <Typography>{displayDate}</Typography>
                     <Typography paragraph>{item.description}</Typography>

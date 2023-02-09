@@ -22,7 +22,7 @@ export const theme = createTheme({
       fontSize: '2.25rem',
       fontWeight: '500',
       letterSpacing: '0.01rem',
-      paddingBottom: '1rem'
+      paddingBottom: '1.5rem'
     },
     h2: {
       fontSize: '1.5rem',
@@ -33,7 +33,7 @@ export const theme = createTheme({
     },
     h3: {
       fontSize: '1.1rem',
-      fontWeight: '500',
+      fontWeight: '600',
       paddingBottom: '0.5rem',
     },
     h4: {
