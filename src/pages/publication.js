@@ -4,13 +4,13 @@ import Seo from "../components/layout/seo"
 import featureImg from '../images/features-5.png'
 import { usePublications } from '../hooks'
 import BreadcrumbNav from '../components/layout/breadcrumbs'
-import { Container, Typography, Box } from '@mui/material'
+import { Container, Typography, Box, Stack, useMediaQuery } from '@mui/material'
 
 const PublicationPage = () => {
   const webinars = usePublications()[0]
   const papers= usePublications()[1]
   
-  const styles = {
+  const oldStyles = {
     sectionTitle: {
         },
     container: {
@@ -37,19 +37,22 @@ const PublicationPage = () => {
       },
       '& h3': {
         paddingBottom: '10px',
-        fontStyle: 'italic',
         color: 'grey',
       },
 
     },
     publicationItem: {
-      padding: '10px',
+      padding: '0 0 1rem',
+      '& h3': {
+        fontWeight: '600'
+      }
     },
     featureImage: {
       height: '200px',
     }
   }
   
+  const compact = useMediaQuery('(max-width: 1000px)');
   const breadcrumbs = [
     { text: 'Home', path: '/' },
     { text: 'Publications', path: '/publication' },
@@ -61,42 +64,66 @@ const PublicationPage = () => {
       <BreadcrumbNav crumbs={breadcrumbs} title='Publications'/>
       <Container>
         <Typography variant='h1'>Neurobridge Publications</Typography>
-        <Box sx={styles.container}>
-          <Box sx={styles.publicationType}>
+
+        <Stack 
+          direction={{ xs: 'column', md: 'row' }}
+          spacing={{ xs: 1, md: 2 }}
+        >
+          <Box>
             <Typography variant='h2'>Published Papers</Typography>
           </Box>
-          <Box sx={styles.publicationList}>
-            <ul>
-              {papers.map((item)=> (
-                <li key={item.title} sx={styles.publicationItem}>
-                  <Typography paragraph>{item.citation}</Typography>
-                  <Link to={item.link}>Click here to read more</Link>
-                </li>
-              ))}
-            </ul>
+          <Box>
+            {
+              papers.map((item)=> {
+                const splitDate = Date(item.date).split(' ')
+                const displayDate = `${splitDate[1]} ${splitDate[2]}, ${splitDate[3]}`
+
+                return (
+                  <Box key={item.title} >
+                    <Typography variant='h3'>{item.title}</Typography>
+                    <Typography paragraph>{item.description}</Typography>
+                    <Link to={item.link}>Read more</Link>
+                  </Box>
+                )
+              })
+            }
           </Box>
-          <Box
-            component='img'
-            src={featureImg}
-            alt=''
-            sx={styles.featureImage}
-          />
-        </Box>
-        <Box sx={styles.container}>
-          <Box sx={styles.publicationType}>
+          {/* {
+            !compact && (
+              <Box
+                component='img'
+                src={featureImg}
+                alt=''
+              />  
+            )
+          } */}
+        </Stack>
+        
+        <Stack 
+          direction={{ xs: 'column', md: 'row' }}
+          spacing={{ xs: 1, md: 2 }}
+        >
+          <Box>
             <Typography variant='h2'>Webinars/Seminars</Typography>
           </Box>
-          <Box sx={styles.publicationList}>
-            <ul>
-              {webinars.map((item)=> (
-                <li key={item.title} sx={styles.publicationItem}>
-                  <Typography paragraph>{item.description}</Typography>
-                  <Link to={item.slides}>Click here to access the slides</Link>
-                </li>
-              ))}
-            </ul>
+          <Box >
+            {
+              webinars.map((item)=> {
+                const splitDate = Date(item.date).split(' ')
+                const displayDate = `${splitDate[1]} ${splitDate[2]}, ${splitDate[3]}`
+
+                return (
+                  <Box key={item.title} >
+                    <Typography variant='h3'>{item.title}</Typography>
+                    <Typography>{displayDate}</Typography>
+                    <Typography paragraph>{item.description}</Typography>
+                    <Link to={item.slides}>Read more</Link>
+                  </Box>
+                )
+              })
+            }
           </Box>
-        </Box>
+        </Stack>
       </Container>
     </>
   )
