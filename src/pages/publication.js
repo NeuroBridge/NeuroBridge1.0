@@ -27,49 +27,7 @@ const PublicationPage = () => {
       paddingBottom: '2rem'
     }
   }
-  
-  const oldStyles = {
-    sectionTitle: {
-        },
-    container: {
-      display: 'flex',
-      paddingTop: '30px',
-    },
-    publicationType: {
-      paddingRight: '20px',
-      width: '25%',
-      display: 'flex',
-      justifyContent: 'space-between',
-      '&:after': {
-        content: '""',
-        background: 'red',
-        height: '35px',
-        width: '3px',
-    }
-
-    },
-    publicationList: {
-      width: '50%',
-      '& h2': {
-        paddingBottom: '15px',
-      },
-      '& h3': {
-        paddingBottom: '10px',
-        color: 'grey',
-      },
-
-    },
-    publicationItem: {
-      padding: '0 0 1rem',
-      '& h3': {
-        fontWeight: '600'
-      }
-    },
-    featureImage: {
-      height: '200px',
-    }
-  }
-  
+    
   const breadcrumbs = [
     { text: 'Home', path: '/' },
     { text: 'Publications', path: '/publication' },
