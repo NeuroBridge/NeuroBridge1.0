@@ -51,9 +51,6 @@ const PublicationPage = () => {
           <Box sx={styles.sectionContent}>
             {
               papers.map((item)=> {
-                const splitDate = Date(item.date).split(' ')
-                const displayDate = `${splitDate[1]} ${splitDate[2]}, ${splitDate[3]}`
-
                 return (
                   <Box key={item.title} sx={styles.publicationItem}>
                     <Typography variant='h3'>{item.title}</Typography>
@@ -77,13 +74,10 @@ const PublicationPage = () => {
           <Box sx={styles.sectionContent}>
             {
               webinars.map((item)=> {
-                const splitDate = Date(item.date).split(' ')
-                const displayDate = `${splitDate[1]} ${splitDate[2]}, ${splitDate[3]}`
-
                 return (
                   <Box key={item.title} sx={styles.publicationItem}>
                     <Typography variant='h3'>{item.title}</Typography>
-                    <Typography>{displayDate}</Typography>
+                    <Typography>{item.displayDate}</Typography>
                     <Typography paragraph>{item.description}</Typography>
                     <Link to={item.slides}>Read more</Link>
                   </Box>
