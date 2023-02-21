@@ -38,7 +38,7 @@ const PublicationPage = () => {
       <Seo title="Publications" />
       <BreadcrumbNav crumbs={breadcrumbs} title='Publications'/>
       <Container>
-        <Typography variant='h1'>NeuroBridge Publications</Typography>
+        <Typography variant='h1'>Publications</Typography>
 
         <Stack 
           direction={{ xs: 'column', md: 'row' }}
