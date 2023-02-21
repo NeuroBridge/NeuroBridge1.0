@@ -113,14 +113,6 @@ const AboutPage = () => {
             </Typography>
           </Box>
         </Stack>
-        <Box sx={styles.infoBox}>
-          <Link to='/team'>
-            <Typography variant='h3'>Click to learn more about our team</Typography>
-          </Link>
-          <Link to='/institutions'>
-            <Typography variant='h3'>Click to view participating institutions</Typography>
-          </Link>
-        </Box>
       </Container>
     </>
   )
