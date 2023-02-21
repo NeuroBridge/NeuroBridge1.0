@@ -4,7 +4,7 @@ Deployed site: neurobridges.org
 Rebuilt with React / GatsbyJS / Material UI
 ## Description
 
-This website is intended to give information and access to the Neurobridge Portal Application. The site was built using GatsbyJS and Material UI and is deployed on Netlify. The site can be found at neurobridges.org
+This website is intended to give information and access to the NeuroBridge Portal Application. The site was built using GatsbyJS and Material UI and is deployed on Netlify. The site can be found at neurobridges.org
 
 
 ## Installation
