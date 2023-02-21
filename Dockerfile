@@ -1,4 +1,5 @@
 FROM gatsbyjs/gatsby:onbuild as build
 
-FROM gatsbyjs/gatsby
-COPY --from=build /pub /pub
+FROM bitnami/nginx:latest
+COPY --from=build /pub /opt/bitnami/nginx/html/
+CMD ["nginx", "-g", "daemon off;"]
