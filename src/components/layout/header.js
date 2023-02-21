@@ -93,7 +93,7 @@ const Header = ({ siteTitle }) => {
       flexDirection: 'column',
       justifyContent: 'flex-start',
       fontSize: '200%',
-      backgroundImage: 'linear-gradient(to bottom, #ffffff, #f4e8dd)',
+      backgroundImage: 'linear-gradient(to bottom, #ffffff50, #f4e8dd50)',
       padding: '20px',
     },
     mobileMenuItem: {
