@@ -38,7 +38,7 @@ const PublicationPage = () => {
       <Seo title="Publications" />
       <BreadcrumbNav crumbs={breadcrumbs} title='Publications'/>
       <Container>
-        <Typography variant='h1'>Neurobridge Publications</Typography>
+        <Typography variant='h1'>Publications</Typography>
 
         <Stack 
           direction={{ xs: 'column', md: 'row' }}
@@ -74,10 +74,12 @@ const PublicationPage = () => {
           <Box sx={styles.sectionContent}>
             {
               webinars.map((item)=> {
+                const d = new Date(item.date)
+                const newDate = d.toDateString().slice(4,15)
                 return (
                   <Box key={item.title} sx={styles.publicationItem}>
                     <Typography variant='h3'>{item.title}</Typography>
-                    <Typography>{item.displayDate}</Typography>
+                    <Typography>{newDate}</Typography>
                     <Typography paragraph>{item.description}</Typography>
                     <Link to={item.slides}>Read more</Link>
                   </Box>

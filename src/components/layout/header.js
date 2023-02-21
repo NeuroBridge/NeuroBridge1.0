@@ -93,7 +93,7 @@ const Header = ({ siteTitle }) => {
       flexDirection: 'column',
       justifyContent: 'flex-start',
       fontSize: '200%',
-      backgroundImage: 'linear-gradient(to bottom, #ffffff, #f4e8dd)',
+      backgroundImage: 'linear-gradient(to bottom, #ffffff50, #f4e8dd50)',
       padding: '20px',
     },
     mobileMenuItem: {
@@ -207,7 +207,7 @@ const Header = ({ siteTitle }) => {
                 sx={styles.mobileMenuItem}
                 onClick={ () => setMenuOpen(false) }
               >
-                Neurobridge Portal
+                Search Portal
               </MuiLink>
             </Drawer>
             <IconButton
@@ -278,7 +278,7 @@ const Header = ({ siteTitle }) => {
                 ))
               }
                 <Button variant="contained" href='https://neurobridges-portal-staging.netlify.app/' color='secondary' sx={{textTransform: 'none'}}>
-                  Neurobridge Portal
+                  Search Portal
                 </Button>
             </Box>
         )
