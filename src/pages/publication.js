@@ -74,10 +74,12 @@ const PublicationPage = () => {
           <Box sx={styles.sectionContent}>
             {
               webinars.map((item)=> {
+                const d = new Date(item.date)
+                const newDate = d.toDateString().slice(4,15)
                 return (
                   <Box key={item.title} sx={styles.publicationItem}>
                     <Typography variant='h3'>{item.title}</Typography>
-                    <Typography>{item.displayDate}</Typography>
+                    <Typography>{newDate}</Typography>
                     <Typography paragraph>{item.description}</Typography>
                     <Link to={item.slides}>Read more</Link>
                   </Box>
