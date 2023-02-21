@@ -6,7 +6,7 @@ export const theme = createTheme({
       main: '#556270', //grey
     },
     secondary: {
-      main: '#DC143C',
+      main: '#DC143C',  //red
     },
     text: {
       primary: '#556270', //grey
@@ -20,8 +20,8 @@ export const theme = createTheme({
     fontFamily: `'Libre Franklin', 'Roboto', 'Helvetica', san-serif`,
     h1: {
       fontSize: '2.25rem',
-      fontWeight: '500',
-      letterSpacing: '0.01rem',
+      fontWeight: '700',
+      letterSpacing: '0.1rem',
       paddingBottom: '1.5rem'
     },
     h2: {
@@ -41,6 +41,14 @@ export const theme = createTheme({
     },
     h6: {
       fontSize: '1rem',
+    },
+    body1: {
+
+    },
+    body2: {
+      fontSize: '18px',
+      letterSpacing: '1px',
+      lineHeight: '1.4',
     }
   },
 })
