@@ -20,6 +20,7 @@ const HomeHero = () => {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center 33%',
+      overflow: 'hidden',
     },
     caption: {
       '& h1': {        
@@ -56,16 +57,18 @@ const HomeHero = () => {
     }
   }
 
+  const containerRef = React.useRef(null);
+
   return (
-    <Box sx={styles.hero}>
+    <Box sx={styles.hero} ref={containerRef}>
       <Box sx={styles.caption}>
-        <Slide direction='down' in='true' mountOnEnter unmountOnExit timeout={800}>                
+        <Slide direction='down' in='true' mountOnEnter unmountOnExit timeout={800} container={containerRef.current}>                
           <Typography variant='h1'>{content.title}</Typography>
         </Slide>
-        <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={2000}>
+        <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={2000} container={containerRef.current}>
           <Typography paragraph>{content.subtitle}</Typography>
         </Slide>
-        <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={3000}>
+        <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={3000} container={containerRef.current}>
           <Button href='/about' sx={styles.button}>Read More</Button>
         </Slide>
       </Box>
