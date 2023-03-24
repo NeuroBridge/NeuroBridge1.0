@@ -91,7 +91,7 @@ const AboutPage = () => {
               Portal:
             </Typography>
             <Typography paragraph>
-              Users can use our <Link to='https://neurobridges-portal-staging.netlify.app/'>prototype portal</Link> to 
+              Users can use our <Link to='https://portal.neurobridges.org/'>prototype portal</Link> to 
                 perform searches for papers describing neuroimaging studies on schizophrenia and addiction, by building 
                 a query composed of concepts included in the NeuroBridge ontology. 
             </Typography>
