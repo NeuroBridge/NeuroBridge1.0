@@ -6,6 +6,6 @@ ingress:
       paths:
         - path: /
   tls:
-   - secretName: neurobridges.org-tls
-     hosts:
-       - neurobridges.org
+    - secretName: neurobridges.org-tls
+      hosts:
+        - neurobridges.org

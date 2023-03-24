@@ -68,6 +68,6 @@ image:
 
 Deploy the new release with the following command.
 ```bash
-helm upgrade --install neurobridges-website kubernetes -n neurobridges -f kubernetes/sterling.yaml
+helm upgrade --install neurobridges-website kubernetes -n neurobridges -f kubernetes/prod-values.yaml
 ```
-> Note: The values in `sterling.yaml` are Sterling-specific values that will overwrite defaults in `values.yaml`.
+> Note: The values in `prod-values.yaml` are Sterling-specific values that will overwrite those set in `values.yaml`.
