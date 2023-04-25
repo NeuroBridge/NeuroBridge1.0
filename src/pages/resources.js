@@ -17,7 +17,7 @@ const software = [
     },
 ]
 
-const SoftwarePage = () => {
+const ResourcesPage = () => {
     const theme = useTheme()
     const styles = {
         contentContainer: {
@@ -116,4 +116,4 @@ const SoftwarePage = () => {
     )
 }
 
-export default SoftwarePage
+export default ResourcesPage
