@@ -51,7 +51,7 @@ const ResourcesPage = () => {
       <BreadcrumbNav crumbs={breadcrumbs} title='Resources'/>
       <Container>
         <Typography variant='h1'>Our Latest Updated Software</Typography>
-          {
+        {
           resources.map((item)=> (
             <Stack
               key={item.title}
