@@ -76,7 +76,7 @@ const ResourcesPage = () => {
 
     const breadcrumbs = [
         { text: 'Home', path: '/' },
-        { text: 'Resources', path: '/software' },
+        { text: 'Resources', path: '/resources' },
     ]
 
     return (
