@@ -6,15 +6,21 @@ import BreadcrumbNav from '../components/layout/breadcrumbs'
 import { Box, Link as MuiLink, Container, Typography } from "@mui/material"
 import { useTheme } from '@mui/material/styles'
 
-const software = [
-    {
-        name: 'Github',
-        title: 'Github Repo' ,
-        subheading: 'Visit our Github repository to access the latest version of the software release.',
-        text: 'Click below to access the Github page. It has annotation project, ontology and neuro-bridge projects.',
-        resourceLink: 'https://github.com/NeuroBridge',
-        photo: featureImg,
-    },
+const resources = [
+  {
+    source: 'Github',
+    title: 'Github Repo' ,
+    subheading: 'Visit our Github repository to access the latest version of the software release.',
+    text: 'Click below to access the Github page. It has annotation project, ontology and neuro-bridge projects.',
+    resourceLink: 'https://github.com/NeuroBridge',
+  },
+  {
+    source: 'Github',
+    title: 'Ontology' ,
+    subheading: 'Click below to directly access the current ontology.',
+    text: '',
+    resourceLink: 'https://github.com/NeuroBridge/neuro-ontologies/blob/main/neurobridge/NeuroBridge_032423.owl',
+  },
 ]
 
 const ResourcesPage = () => {
