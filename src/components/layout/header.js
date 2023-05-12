@@ -8,7 +8,7 @@ import { Box, Link as MuiLink, Drawer, IconButton, Button, MenuItem, Popover, Ty
 import { useTheme } from '@mui/material/styles'
 
 const mainMenuLinks = [
-  { text: 'Resources',      path: '/software' },
+  { text: 'Resources',      path: '/resources' },
   { text: 'Publications',   path: '/publication' },
 
 ]
