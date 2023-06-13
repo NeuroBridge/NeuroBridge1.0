@@ -19,10 +19,11 @@ export const theme = createTheme({
   typography: {
     fontFamily: `'Libre Franklin', 'Roboto', 'Helvetica', san-serif`,
     h1: {
-      fontSize: '2.25rem',
-      fontWeight: '700',
-      letterSpacing: '0.1rem',
-      paddingBottom: '1.5rem'
+      fontSize: 'clamp(2rem, 1.7246rem + 1.5738vw, 3.2rem)',
+      fontWeight: '800',
+      letterSpacing: '0.2rem',
+      paddingBottom: '1.5rem',
+      lineHeight: '1.2'
     },
     h2: {
       fontSize: '1.5rem',
@@ -42,6 +43,12 @@ export const theme = createTheme({
     h6: {
       fontSize: '1rem',
     },
+    subtitle1: {
+      fontSize: '0.95rem',
+      fontWeight: "600",
+      letterSpacing:"0.6px",
+      paddingBottom: '1rem'
+    },
     body1: {
 
     },
@@ -49,6 +56,11 @@ export const theme = createTheme({
       fontSize: '18px',
       letterSpacing: '1px',
       lineHeight: '1.4',
+    },
+    button: {
+      textTransform: 'capitalize',
+      fontSize:'1rem',
+      fontWeight: '600',
     }
   },
 })

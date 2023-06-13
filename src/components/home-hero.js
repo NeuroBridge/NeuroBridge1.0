@@ -1,7 +1,7 @@
 import * as React from "react"
 /* eslint-disable no-unused-vars */
 import { Link } from './link'
-import { Slide, Typography, Button, Box } from '@mui/material'
+import { Slide, Typography, Button, Box, useMediaQuery, Container } from '@mui/material'
 import welcomeNB from '../images/slide/PdG.jpeg'
 import { useTheme } from '@mui/material/styles'
 
@@ -12,47 +12,49 @@ const content = {
 
 const HomeHero = () => {
   const theme = useTheme()
+  const compact = useMediaQuery('(max-width: 800px)');
 
   const styles = {
-    hero: {
-      height: '600px', //make the hero image full screen, must adapt
+    heroImage: {
+      height: compact ? '600px' : '600px', //make the hero image full screen, must adapt
       backgroundImage: `url(${welcomeNB})`,
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center 33%',
       overflow: 'hidden',
     },
-    caption: {
-      '& h1': {        
-        letterSpacing: '1px',
-      },
-      backgroundColor: 'rgba(63, 73, 83, 0.7)',
+    overlay: {
+      backgroundImage: compact ? 
+        'linear-gradient(to top, rgba(176,224,230, 0.3), rgba(150,150,150,0.5))' :
+        'linear-gradient(to left, rgba(176,224,230, 0.42), rgba(23, 32, 44, 0.95))',
+      backgroundColor: compact ? 'rgba(50,50,50,0.7)': null,
       height: '100%',
-      color: '#fff', //white
-      textAlign: 'center',
+    },
+    textContainer: {
+      height: '100%',
+      width: compact? '100%':'600px',
+      padding: compact ? '0 1.5rem' : '0 3rem',
       display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       flexDirection: 'column',
-      padding: '0 1.5rem'
+      justifyContent: 'center',
+      alignContent: 'start',
+      color: '#fff', //white
+      textAlign: compact? 'center':'left'
     },
     button: {
-      borderWidth: '1px',
-      borderColor: theme.palette.secondary.main, //red
-      backgroundColor: theme.palette.secondary.main, //red
+      backgroundColor: '#a30b0b', //red
       color: '#fff', //white
       borderRadius: '5px',
-      padding: '10px 30px',
-      boxShadow: '0px 2px 15px rgba(85, 98, 112, 0.08)',
+      padding: '10px 20px',
+      boxShadow: '4px 4px 5px rgba(23, 32, 44, 0.95)',
       margin: '10px',
-      textTransform: 'capitalize',
+      width: '500px',
+
       '&:hover': {
         cursor: 'pointer',
-        borderWidth: '1px',
-        borderColor: '#f54568', //red
-        backgroundColor: '#f54568', //red
+        backgroundColor: '#a82618', //red
         color: '#fff', //white
-        textTransform: 'capitalize',
+
       }
     }
   }
@@ -60,17 +62,19 @@ const HomeHero = () => {
   const containerRef = React.useRef(null);
 
   return (
-    <Box sx={styles.hero} ref={containerRef}>
-      <Box sx={styles.caption}>
-        <Slide direction='down' in='true' mountOnEnter unmountOnExit timeout={800} container={containerRef.current}>                
-          <Typography variant='h1'>{content.title}</Typography>
-        </Slide>
-        <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={2000} container={containerRef.current}>
-          <Typography paragraph>{content.subtitle}</Typography>
-        </Slide>
-        <Slide direction='up' in='true' mountOnEnter unmountOnExit timeout={3000} container={containerRef.current}>
-          <Button href='/about' sx={styles.button}>Read More</Button>
-        </Slide>
+    // Outer box contains the image of the bridge sx={styles.hero}
+    <Box ref={containerRef} sx={styles.heroImage}>
+      {/* Inner box contains the colored overlay sx={styles.overlay}*/}
+      <Box sx={styles.overlay}>
+        {/* Container contains the text elements */}
+          <Box 
+            sx={styles.textContainer}>
+            <Typography variant='h1'>{content.title}</Typography>
+            <Typography variant='subtitle1'>{content.subtitle}</Typography>
+            <Button href='/about' sx={styles.button}>
+              <Typography variant='button'>Read More</Typography>
+            </Button>
+          </Box>
       </Box>
     </Box>
   )
