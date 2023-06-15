@@ -2,7 +2,7 @@
   "name": "neurobridge-website",
   "private": true,
   "description": "A website sharing information about the NeuroBridge project.",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "author": "Suejin Kim <sjkim@renci.org>",
   "dependencies": {
     "@emotion/react": "^11.7.0",
